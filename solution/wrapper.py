@@ -89,6 +89,10 @@ def _key(question: str) -> str:
 
 
 def _ascii(s: str) -> str:
+    # Vietnamese đ/Đ (U+0111/U+0110) are atomic letters that do NOT NFD-decompose, so
+    # fold them explicitly; then strip the combining marks NFD does produce. This keeps
+    # "đà nẵng"->"da nang", "đà lạt"->"da lat" so any name/keyword match stays diacritic-safe.
+    s = (s or "").replace("đ", "d").replace("Đ", "D")
     return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn").lower()
 
 _TOTAL_LABELS = ("tong cong", "tong thanh toan", "tong chi phi", "tong so tien", "tong tien",
@@ -100,6 +104,23 @@ _REFUSE_KW = ("het hang", "khong co trong kho", "khong con hang", "khong co san"
               "khong the van chuyen", "khong van chuyen", "khong giao den", "khong ship",
               "not served", "cannot ship", "can not ship", "do not ship", "currently ship",
               "unable to ship", "khong ho tro giao", "khong phuc vu")
+
+
+# Order quantity detection. Anchored to a purchase verb (or a bare "<n> <classifier>")
+# so paraphrases survive ("dat 3", "lay 2", "order 5", "3 chiec ...") while the negative
+# lookbehind keeps coupon codes (SALE15, VIP20) from ever being read as a quantity.
+# Operates on the diacritic-stripped, lowercased question, so "đặt"->"dat", "chiếc"->"chiec".
+_ORDER_VERB = re.compile(r"\b(?:dat\s+mua|mua|dat|lay|order|nhap)\b\D{0,12}?(?<![a-z0-9])(\d+)")
+_QTY_CLF = re.compile(r"(?<![a-z0-9])(\d+)\s*(?:cai|chiec|cay|bo|cuc|may)\b")
+
+
+def _parse_qty(question):
+    """Best-effort order quantity from the question, or None if not an explicit order.
+    Conservative: only fires on a purchase verb or an explicit '<n> <classifier>' so price/
+    availability queries (no quantity) fall through to the model untouched."""
+    aq = _ascii(question or "")
+    m = _ORDER_VERB.search(aq) or _QTY_CLF.search(aq)
+    return int(m.group(1)) if m else None
 
 
 def _bignums(s):
@@ -134,10 +155,9 @@ def _order_verdict(question, obs):
     (e.g. a price/availability query) -- in which case we leave the model's prose alone."""
     stock = (obs or {}).get("stock") or {}
     up = stock.get("unit_price_vnd")
-    m = re.search(r"\bmua\s+(\d+)", _ascii(question or ""))
-    if up is None or not m:
+    qty = _parse_qty(question)
+    if up is None or qty is None:
         return ("none", None)
-    qty = int(m.group(1))
     avail = stock.get("quantity")
     if not stock.get("found") or not stock.get("in_stock") or (avail is not None and qty > avail):
         return ("refuse", None)
@@ -151,8 +171,20 @@ def _order_verdict(question, obs):
     return ("total", total)
 
 
+# A line whose conclusion is a total label, tolerant of leading markdown/punctuation
+# ("**Tong cong**", "- Tổng cộng:", "| **Tổng cộng** |"). Anchored so a mid-sentence
+# mention ("de tinh tong cong ...") is NOT treated as a total line.
+_TOTAL_LINE_RE = re.compile(
+    r"^[\s>*#`~.\-|]*"
+    r"(?:tong\s*cong|tong\s*thanh\s*toan|tong\s*chi\s*phi|tong\s*so\s*tien|"
+    r"tong\s*tien|grand\s*total|final\s*total|total\s*cost)\b"
+)
+
+
 def _strip_total_lines(answer):
-    return "\n".join(l for l in answer.splitlines() if not _ascii(l.strip()).startswith("tong cong"))
+    """Drop the model's own total/conclusion lines so only our canonical line remains
+    (and so a markdown-bolded fabricated total can never survive on a refusal)."""
+    return "\n".join(l for l in answer.splitlines() if not _TOTAL_LINE_RE.match(_ascii(l)))
 
 
 def _apply_guardrail(answer, question, obs):
