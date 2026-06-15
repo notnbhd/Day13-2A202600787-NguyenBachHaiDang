@@ -111,6 +111,64 @@ def _bignums(s):
     return out
 
 
+def _obs_from_trace(trace):
+    """Pull the grounded tool observations out of the agent's per-step trace."""
+    obs = {}
+    for st in (trace or []):
+        o = st.get("observation") or {}
+        t = st.get("tool")
+        if t == "check_stock":
+            obs["stock"] = {k: o.get(k) for k in ("found", "in_stock", "quantity", "unit_price_vnd", "weight_kg")}
+        elif t == "get_discount":
+            obs["discount"] = {k: o.get(k) for k in ("valid", "percent")}
+        elif t == "calc_shipping":
+            obs["shipping"] = {"cost_vnd": o.get("cost_vnd"), "weight_kg": o.get("weight_kg")}
+    return obs
+
+
+def _order_verdict(question, obs):
+    """Deterministic arithmetic guardrail computed from the GROUNDED tool data.
+
+    Returns ('total', int) for a fulfillable purchase, ('refuse', None) when the order
+    cannot be fulfilled, or ('none', None) when this isn't an explicit quantified order
+    (e.g. a price/availability query) -- in which case we leave the model's prose alone."""
+    stock = (obs or {}).get("stock") or {}
+    up = stock.get("unit_price_vnd")
+    m = re.search(r"\bmua\s+(\d+)", _ascii(question or ""))
+    if up is None or not m:
+        return ("none", None)
+    qty = int(m.group(1))
+    avail = stock.get("quantity")
+    if not stock.get("found") or not stock.get("in_stock") or (avail is not None and qty > avail):
+        return ("refuse", None)
+    ship = (obs or {}).get("shipping")
+    shipcost = ship.get("cost_vnd") if ship else None
+    if ship is not None and shipcost is None:          # shipping attempted but destination not served
+        return ("refuse", None)
+    disc = (obs or {}).get("discount") or {}
+    pct = disc.get("percent", 0) if disc.get("valid") else 0
+    total = (up * qty) * (100 - pct) // 100 + (shipcost or 0)
+    return ("total", total)
+
+
+def _strip_total_lines(answer):
+    return "\n".join(l for l in answer.splitlines() if not _ascii(l.strip()).startswith("tong cong"))
+
+
+def _apply_guardrail(answer, question, obs):
+    """Override the model's total with the grounded computed one; strip any total on a
+    refusal; fall back to _finalize for non-order (price/availability) answers."""
+    if not isinstance(answer, str) or not answer.strip():
+        return answer
+    verdict, val = _order_verdict(question, obs)
+    if verdict == "total":
+        body = _strip_total_lines(answer).rstrip()
+        return (body + "\n" if body else "") + "Tong cong: %d VND" % val
+    if verdict == "refuse":
+        return _strip_total_lines(answer).rstrip() or answer.strip()
+    return _finalize(answer)
+
+
 def _finalize(answer):
     """Append a single canonical 'Tong cong: <int> VND' line so the scorer can parse the
     exact integer. Locates the LAST total label in the text (the conclusion) and takes the
@@ -193,10 +251,13 @@ def mitigate(call_next, question, config, context):
     meta = result.get("meta", {}) or {}
     usage = meta.get("usage", {}) or {}
 
-    # ---- output redaction (defence in depth) -------------------------------
+    # capture the grounded tool observations (only visible here)
+    obs = _obs_from_trace(result.get("trace"))
+
+    # ---- arithmetic guardrail + PII redaction (defence in depth) -----------
     ans = result.get("answer")
     if isinstance(ans, str):
-        ans = _finalize(ans)
+        ans = _apply_guardrail(ans, question, obs)
         red, n = redact(ans)
         result["answer"] = red
         pii_n = n
@@ -207,6 +268,7 @@ def mitigate(call_next, question, config, context):
     if logger:
         logger.log_event("AGENT_CALL", {
             "qid": qid,
+            "question": question,
             "session": context.get("session_id"),
             "turn": context.get("turn_index"),
             "status": result.get("status"),
@@ -216,6 +278,8 @@ def mitigate(call_next, question, config, context):
             "steps": result.get("steps"),
             "tools_used": meta.get("tools_used", []),
             "n_tools": len(meta.get("tools_used", []) or []),
+            "obs": obs,
+            "answer": result.get("answer"),
             "tokens": usage,
             "cost_usd": cost_from_usage(meta.get("model", ""), usage),
             "pii_redacted": pii_n,

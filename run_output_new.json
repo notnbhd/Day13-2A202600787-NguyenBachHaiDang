@@ -1,0 +1,1128 @@
+{
+  "phase": "public",
+  "n": 120,
+  "users": null,
+  "turns": null,
+  "config_used": {
+    "provider": "openai",
+    "model": "deepseek-v4-flash",
+    "model_price_tier": "mini",
+    "max_steps": 6,
+    "loop_guard": true,
+    "temperature": 0.2,
+    "context_size": 4,
+    "verbose_system": false,
+    "retry": {
+      "enabled": true,
+      "max_attempts": 3,
+      "backoff_ms": 250
+    },
+    "cache": {
+      "enabled": true
+    },
+    "normalize_unicode": true,
+    "redact_pii": true,
+    "session_drift_rate": 0.0,
+    "context_reset_every": 4,
+    "tool_error_rate": 0.0,
+    "catalog_override": {
+      "macbook": {
+        "in_stock": true
+      }
+    },
+    "planner": false,
+    "verify": true,
+    "self_consistency": 1,
+    "tool_budget": 4,
+    "prompt_chars": 720,
+    "custom_prompt": false
+  },
+  "results": [
+    {
+      "qid": "pub-001",
+      "question": "Mua 4 AirPods dung ma EXPIRED giao den Da Nang tinh tong tien giup minh.",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt mua được.\n\n(Từ chối, không có tổng)",
+      "status": "ok",
+      "session": "pub-001",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.107783Z"
+    },
+    {
+      "qid": "pub-002",
+      "question": "Mua 5 AirPods voi coupon SALE15 - tong cong bao nhieu VND?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt được. (không có tổng)",
+      "status": "ok",
+      "session": "pub-002",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.109828Z"
+    },
+    {
+      "qid": "pub-003",
+      "question": "Mua 3 MacBook voi coupon VIP20, ship Hai Phong - tong cong bao nhieu VND?",
+      "answer": "Thông tin đơn hàng:\n- **MacBook**: còn hàng, 35.000.000 VND/chiếc, x 3 = **105.000.000 VND**\n- **Mã VIP20**: hợp lệ, giảm **20%**\n- Giảm giá: 105.000.000 × 20% = 21.000.000 VND → còn **84.000.000 VND**\n- **Phí ship Hai Phòng** (4.8 kg): **47.000 VND**\n\n**Tổng: 84.000.000 + 47.000 = 84.047.000 VND**\nTong cong: 84047000 VND",
+      "status": "ok",
+      "session": "pub-003",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.458658Z"
+    },
+    {
+      "qid": "pub-004",
+      "question": "Mua 5 iPad giao Ha Noi tinh tong tien giup minh.",
+      "answer": "Đã có đầy đủ thông tin, tôi tính tổng như sau:\n\n**Chi tiết đơn hàng:**\n- Sản phẩm: iPad × 5 = 90.000.000 VND\n- Phí vận chuyển đến Hà Nội (2.25 kg): 36.250 VND\n- Không có mã giảm giá.\n\n**Tổng cộng: 90.036.250 VND**\nTong cong: 90036250 VND",
+      "status": "ok",
+      "session": "pub-004",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.529604Z"
+    },
+    {
+      "qid": "pub-005",
+      "question": "Mua 5 iPad, ship Ha Noi tinh tong tien giup minh.",
+      "answer": "**Tính toán:**\n\n- **Số lượng:** 5 iPad\n- **Đơn giá:** 18,000,000 VND\n- **Thành tiền:** 5 × 18,000,000 = **90,000,000 VND**\n- **Giảm giá:** Không có mã giảm giá → 0%\n- **Phí ship Hà Nội** (2.25 kg): **36,250 VND**\n- **Tổng cộng:** 90,000,000 + 36,250 = **90,036,250 VND**\nTong cong: 90036250 VND",
+      "status": "ok",
+      "session": "pub-005",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.621508Z"
+    },
+    {
+      "qid": "pub-006",
+      "question": "Mua 5 iPad ap dung ma WINNER giao den Ha Noi tinh tong tien giup minh.",
+      "answer": "Tuyệt vời! Đã có đủ thông tin. Tính toán như sau:\n\n**Chi tiết đơn hàng:**\n- **Sản phẩm:** iPad × 5\n- **Đơn giá:** 18,000,000 VND/cái\n- **Tạm tính:** 5 × 18,000,000 = **90,000,000 VND**\n- **Mã giảm giá WINNER:** Giảm 10% → Giảm 9,000,000 VND\n- **Sau giảm giá:** 90,000,000 × 90% = **81,000,000 VND**\n- **Phí ship đến Hà Nội (2.25kg):** **36,250 VND**\n\n**Tổng cộng:** 81,000,000 + 36,250 = **81,036,250 VND**\nTong cong: 81036250 VND",
+      "status": "ok",
+      "session": "pub-006",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.664558Z"
+    },
+    {
+      "qid": "pub-007",
+      "question": "Mua 4 iPhone giao Hai Phong tinh tong tien giup minh.",
+      "answer": "Thông tin đơn hàng:\n- **iPhone**: 4 × 22,000,000 VND = 88,000,000 VND\n- **Phí ship Hải Phòng** (2 kg): 33,000 VND\n- **Không có mã giảm giá**\n\n\n**Tong cong: 88033000 VND**\nTong cong: 88033000 VND",
+      "status": "ok",
+      "session": "pub-007",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.831504Z"
+    },
+    {
+      "qid": "pub-008",
+      "question": "Mua 4 MacBook ap dung ma EXPIRED giao den Da Nang - tong cong bao nhieu VND?",
+      "answer": "Đã có đủ thông tin, tính tổng tiền.\n\n**Tính toán:**\n- Subtotal: 4 × 35.000.000 = **140.000.000 VND**\n- Mã EXPIRED: không hợp lệ → giảm 0%\n- Đã giảm: 140.000.000 VND\n- Phí ship Đà Nẵng (6.4 kg): **62.000 VND**\n- **Tổng: 140.000.000 + 62.000 = 140.062.000 VND**\nTong cong: 140062000 VND",
+      "status": "ok",
+      "session": "pub-008",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.866777Z"
+    },
+    {
+      "qid": "pub-009",
+      "question": "Mua 3 iPad, ship Ha Noi - tong cong bao nhieu VND?",
+      "answer": "Kiểm tra tồn kho: iPad còn hàng (7 cái), đơn giá 18,000,000 VND/cái, mỗi cái nặng 0.45 kg.\n\n- Số lượng: 3\n- Tạm tính: 3 × 18,000,000 = 54,000,000 VND\n- Không có mã giảm giá\n- Phí ship Hà Nội (1.35 kg): 31,750 VND\n\n**Tổng cộng: 54,031,750 VND**\nTong cong: 54031750 VND",
+      "status": "ok",
+      "session": "pub-009",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:00.893316Z"
+    },
+    {
+      "qid": "pub-010",
+      "question": "Mua 1 MacBook voi coupon SALE15, ship Ha Noi - tong cong bao nhieu VND? goi minh qua sdt 0987654321",
+      "answer": "MacBook còn hàng (giá 35.000.000 VND), mã SALE15 hợp lệ giảm 15%. Phí ship Hà Nội: 33.000 VND.\n\n- Subtotal: 35.000.000 VND\n- Giảm 15%: còn 29.750.000 VND\n- + Phí ship: 33.000 VND\nTong cong: 29783000 VND",
+      "status": "ok",
+      "session": "pub-010",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:01.006772Z"
+    },
+    {
+      "qid": "pub-011",
+      "question": "Mua 4 iPhone dung ma SALE15, ship Can Tho - tong cong bao nhieu VND?",
+      "answer": "Cần Thơ hiện không nằm trong danh sách các địa điểm giao hàng hỗ trợ. Rất tiếc, không thể giao tới Cần Thơ nên không có tổng tiền.",
+      "status": "ok",
+      "session": "pub-011",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:01.171915Z"
+    },
+    {
+      "qid": "pub-012",
+      "question": "Mua 2 iPad ap dung ma EXPIRED, ship Hai Phong - tong cong bao nhieu VND?",
+      "answer": "iPad có sẵn (7 cái), đơn giá 18.000.000 VND/cái. Mã EXPIRED không hợp lệ, bỏ qua (giảm 0%).\n\n- Subtotal: 2 × 18.000.000 = 36.000.000 VND\n- Giảm giá: 0% → 36.000.000 VND\n- Phí ship Hai Phong (0,9 kg): 28.000 VND\n- **Tổng cộng: 36.028.000 VND**\nTong cong: 36028000 VND",
+      "status": "ok",
+      "session": "pub-012",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:01.210231Z"
+    },
+    {
+      "qid": "pub-013",
+      "question": "Mua 2 iPhone giao den TP HCM tinh tong tien giup minh.",
+      "answer": "**Kết quả tính toán:**\n\n- **Sản phẩm:** iPhone (x2)\n- **Đơn giá:** 22,000,000 VND\n- **Thành tiền:** 22,000,000 × 2 = **44,000,000 VND**\n- **Khuyến mãi:** Không có\n- **Phí ship đến TP HCM (1 kg):** 25,000 VND\n\n**Tổng cộng: 44,025,000 VND**\n\n**Tong cong: 44025000 VND**\nTong cong: 44025000 VND",
+      "status": "ok",
+      "session": "pub-013",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:01.371369Z"
+    },
+    {
+      "qid": "pub-014",
+      "question": "Mua 5 iPad, ship Ha Noi tinh tong tien giup minh. lien he email quan.le@icloud.com",
+      "answer": "**Kiểm tra thông tin:**\n- **iPad:** còn hàng (7 cái), giá 18.000.000 VND/cái, nặng 0.45 kg/cái\n- **Số lượng:** 5 (hợp lệ vì còn đủ 7)\n- **Không có mã giảm giá**\n- **Giao đến:** Hà Nội\n\n**Tính toán:**\n- Tạm tính: 5 × 18.000.000 = **90.000.000 VND**\n- Giảm giá: 0% (không có mã)\n- Phí vận chuyển (2.25 kg → Hà Nội): **36.250 VND**\n- **Tổng cộng:** 90.000.000 + 36.250 = **90.036.250 VND**\n\n**Tong cong: 90036250 VND** (lien he: [REDACTED])\nTong cong: 90036250 VND",
+      "status": "ok",
+      "session": "pub-014",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:01.459039Z"
+    },
+    {
+      "qid": "pub-015",
+      "question": "Shop con iPad khong va gia bao nhieu VND? goi minh qua sdt 0901234567",
+      "answer": "iPad hiện đang có hàng (còn 7 cái) và giá là **18,000,000 VND** mỗi chiếc.\n\nNếu bạn muốn đặt mua với số lượng, mã giảm giá và địa chỉ giao hàng cụ thể, vui lòng cho tôi biết để tính tổng tiền nhé! (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-015",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:02.093365Z"
+    },
+    {
+      "qid": "pub-016",
+      "question": "Mua 3 iPhone giao den Da Nang, tong thanh toan bao nhieu? lien he email linh.pham@outlook.com",
+      "answer": "iPhone còn hàng (12 chiếc), đủ số lượng bạn yêu cầu.\n\n**Tính toán:**\n- Đơn giá: 22,000,000 VND/chiếc\n- Số lượng: 3 → **Thành tiền:** 66,000,000 VND\n- Không có mã giảm giá\n- Phí ship đến Đà Nẵng (1.5 kg): **37,500 VND**\n\n**Tổng thanh toán:** 66,037,500 VND\nTong cong: 66037500 VND",
+      "status": "ok",
+      "session": "pub-016",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:02.112512Z"
+    },
+    {
+      "qid": "pub-017",
+      "question": "Mua 1 iPhone voi coupon SALE15 giao Da Nang, tong thanh toan bao nhieu?",
+      "answer": "**Kết quả tra cứu:**\n- **iPhone**: Còn hàng (12 cái), đơn giá **22,000,000 VND**, trọng lượng 0.5 kg/cái\n- **Coupon SALE15**: Hợp lệ, giảm **15%**\n- **Phí ship đến Đà Nẵng**: **35,000 VND** (cho 0.5 kg)\n\n**Tính toán:**\n- Subtotal: 1 × 22,000,000 = **22,000,000 VND**\n- Giảm 15%: 22,000,000 × 85% = **18,700,000 VND**\n- Cộng phí ship: 18,700,000 + 35,000 = **18,735,000 VND**\nTong cong: 18735000 VND",
+      "status": "ok",
+      "session": "pub-017",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:02.881759Z"
+    },
+    {
+      "qid": "pub-018",
+      "question": "Mua 1 MacBook dung ma WINNER giao Vung Tau - tong cong bao nhieu VND?",
+      "answer": "Rất tiếc, Vũng Tàu hiện không nằm trong khu vực giao hàng của chúng tôi nên không thể đặt hàng.",
+      "status": "ok",
+      "session": "pub-018",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:02.988005Z"
+    },
+    {
+      "qid": "pub-019",
+      "question": "Mua 1 AirPods ap dung ma WINNER giao Ha Noi, tong thanh toan bao nhieu?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt mua được.\n\n(không có tổng)",
+      "status": "ok",
+      "session": "pub-019",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.128215Z"
+    },
+    {
+      "qid": "pub-020",
+      "question": "Mua 5 iPhone ap dung ma WINNER, ship hà nội, tong thanh toan bao nhieu?",
+      "answer": "Đã có đầy đủ thông tin. Tính toán như sau:\n\n- **Sản phẩm**: iPhone - còn hàng (12 cái), đủ số lượng 5 cái\n- **Đơn giá**: 22,000,000 VND/cái\n- **Thành tiền**: 5 × 22,000,000 = **110,000,000 VND**\n- **Mã WINNER**: giảm 10% (hợp lệ) → giảm 11,000,000 VND\n- **Sau giảm giá**: 110,000,000 × 90% = **99,000,000 VND**\n- **Phí ship Hà Nội** (2.5 kg): **37,500 VND**\n\n**Tổng cộng**: 99,000,000 + 37,500 = **99,037,500 VND**\nTong cong: 99037500 VND",
+      "status": "ok",
+      "session": "pub-020",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.160283Z"
+    },
+    {
+      "qid": "pub-021",
+      "question": "Mua 1 iPad dung ma WINNER giao den đà nẵng, tong thanh toan bao nhieu?",
+      "answer": "**Kết quả:**\n- **iPad**: có hàng, giá 18.000.000 VND/cái, số lượng 1\n- **Mã WINNER**: hợp lệ, giảm 10%\n- **Phí ship tới Đà Nẵng**: 35.000 VND (0.45 kg)\n\n**Tính toán:**\n- Thành tiền: 18.000.000 × 1 = 18.000.000 VND\n- Giảm 10%: 18.000.000 × 90% = 16.200.000 VND\n- Tổng: 16.200.000 + 35.000 = 16.235.000 VND\n\n**Tong cong: 16235000 VND**\nTong cong: 16235000 VND",
+      "status": "ok",
+      "session": "pub-021",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.414140Z"
+    },
+    {
+      "qid": "pub-022",
+      "question": "Mua 2 AirPods ap dung ma WINNER, ship Ha Noi - tong cong bao nhieu VND?",
+      "answer": "AirPods hiện đã hết hàng nên không thể đặt được.\n\nKhông có tổng cộng.",
+      "status": "ok",
+      "session": "pub-022",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.456277Z"
+    },
+    {
+      "qid": "pub-023",
+      "question": "Mua 5 iPhone voi coupon WINNER giao den TP HCM - tong cong bao nhieu VND?",
+      "answer": "iPhone có hàng (còn 12 cái), đơn giá 22.000.000 VND/cái. Mã WINNER giảm 10%. Phí ship tới TP HCM cho 2.5 kg là 32.500 VND.\n\n**Tính toán:**\n- Tạm tính: 5 × 22.000.000 = **110.000.000 VND**\n- Giảm 10%: 110.000.000 × 90% = **99.000.000 VND**\n- Phí ship: **32.500 VND**\n- Tổng cộng: 99.000.000 + 32.500 = **99.032.500 VND**\nTong cong: 99032500 VND",
+      "status": "ok",
+      "session": "pub-023",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.539853Z"
+    },
+    {
+      "qid": "pub-024",
+      "question": "Mua 2 MacBook ap dung ma EXPIRED giao den Ha Noi - tong cong bao nhieu VND? goi minh qua sdt 0987654321",
+      "answer": "Hàng còn: MacBook có sẵn (4 cái), giá 35.000.000 VND/cái. Mã EXPIRED không hợp lệ nên bỏ qua (0% giảm). Phí ship đến Hà Nội cho 2 MacBook (3.2 kg) là 41.000 VND.\n\n- Subtotal: 2 × 35.000.000 = 70.000.000 VND\n- Giảm giá: 0% (mã không hợp lệ)\n- Thành tiền sau giảm: 70.000.000 VND\n- Phí ship: 41.000 VND\n\n**Tổng cộng: 70.041.000 VND** (lien he: [REDACTED])\nTong cong: 70041000 VND",
+      "status": "ok",
+      "session": "pub-024",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.544614Z"
+    },
+    {
+      "qid": "pub-025",
+      "question": "Shop con MacBook khong va gia bao nhieu VND? goi minh qua sdt 0901234567",
+      "answer": "Cửa hàng có MacBook, còn hàng (còn 4 cái). Giá: **35.000.000 VND** mỗi chiếc.\n\nBạn cần mua bao nhiêu chiếc, có mã giảm giá hay địa chỉ giao hàng không? Mình sẽ tính tổng tiền giúp bạn nhé! (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-025",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:03.627571Z"
+    },
+    {
+      "qid": "pub-026",
+      "question": "Mua 3 iPhone voi coupon SALE15, ship Ha Noi, tong thanh toan bao nhieu?",
+      "answer": "Đã kiểm tra thông tin:\n\n- **iPhone**: còn hàng (12 cái), đơn giá **22,000,000 VND**, nặng 0.5 kg/cái\n- **Coupon SALE15**: hợp lệ, giảm **15%**\n- **Phí ship tới Hà Nội** cho 1.5 kg (3 × 0.5 kg): **32,500 VND**\n\n**Tính toán:**\n- Subtotal = 3 × 22,000,000 = **66,000,000 VND**\n- Giảm 15% → 66,000,000 × 85% = **56,100,000 VND**\n- Cộng phí ship: 56,100,000 + 32,500 = **56,132,500 VND**\n\n**Tong cong: 56132500 VND**\nTong cong: 56132500 VND",
+      "status": "ok",
+      "session": "pub-026",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:04.312766Z"
+    },
+    {
+      "qid": "pub-027",
+      "question": "Shop con iPhone khong va gia bao nhieu VND?",
+      "answer": "iPhone hiện đang có hàng! \n\n- **Tồn kho**: 12 cái\n- **Giá**: **22.000.000 VND** / cái\n- **Cân nặng**: 0.5 kg / cái\n\nBạn muốn mua bao nhiêu và giao đi đâu để mình tính tổng tiền nhé?",
+      "status": "ok",
+      "session": "pub-027",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:05.083502Z"
+    },
+    {
+      "qid": "pub-028",
+      "question": "Mua 5 iPhone ap dung ma SALE15 giao Hai Phong tinh tong tien giup minh.",
+      "answer": "**Kết quả:**\n\n- **iPhone:** có hàng (còn 12 cái), đơn giá **22,000,000 VND**\n- **Số lượng:** 5 → Thành tiền: 5 × 22,000,000 = **110,000,000 VND**\n- **Mã SALE15:** hợp lệ, giảm **15%** → Giá sau giảm: 110,000,000 × 85% = **93,500,000 VND**\n- **Phí ship tới Hải Phòng:** 2.5 kg × 5 máy = **35,500 VND**\n\n**Tổng cộng:** 93,500,000 + 35,500 = **93,535,500 VND**\nTong cong: 93535500 VND",
+      "status": "ok",
+      "session": "pub-028",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:05.356432Z"
+    },
+    {
+      "qid": "pub-029",
+      "question": "Mua 5 MacBook dung ma WINNER giao den hà nội, tong thanh toan bao nhieu? lien he email an.nguyen@gmail.com",
+      "answer": "MacBook hiện chỉ còn **4** sản phẩm trong kho, trong khi bạn yêu cầu **5**. Số lượng yêu cầu vượt quá tồn kho nên không thể đặt hàng. (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-029",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:05.357125Z"
+    },
+    {
+      "qid": "pub-030",
+      "question": "Shop con iPad khong va gia bao nhieu VND?",
+      "answer": "Shop con iPad nhe! iPad hien dang co san (con 7 chiec). Gia moi chiec la **18.000.000 VND**.",
+      "status": "ok",
+      "session": "pub-030",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:05.920603Z"
+    },
+    {
+      "qid": "pub-031",
+      "question": "Mua 3 iPad voi coupon SALE15 giao den Hai Phong - tong cong bao nhieu VND? goi minh qua sdt 0912345678",
+      "answer": "**Kết quả tra cứu:**\n- **iPad**: còn hàng (7 cái), đơn giá 18,000,000 VND/cái, nặng 0.45 kg/cái\n- **Mã SALE15**: hợp lệ, giảm 15%\n- **Phí ship Hải Phòng** cho 1.35 kg (3 × 0.45 kg): 29,750 VND\n\n**Tính toán:**\n- Subtotal: 3 × 18,000,000 = **54,000,000 VND**\n- Giảm 15%: 54,000,000 × 85 / 100 = **45,900,000 VND**\n- Cộng ship: 45,900,000 + 29,750 = **45,929,750 VND**\n\n**Tong cong: 45929750 VND** (lien he: [REDACTED])\nTong cong: 45929750 VND",
+      "status": "ok",
+      "session": "pub-031",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:06.329831Z"
+    },
+    {
+      "qid": "pub-032",
+      "question": "Shop con iPhone khong va gia bao nhieu VND?",
+      "answer": "iPhone hiện đang có hàng! \n\n- **Tồn kho**: 12 cái\n- **Giá**: **22.000.000 VND** / cái\n- **Cân nặng**: 0.5 kg / cái\n\nBạn muốn mua bao nhiêu và giao đi đâu để mình tính tổng tiền nhé?",
+      "status": "ok",
+      "session": "pub-032",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:06.624493Z"
+    },
+    {
+      "qid": "pub-033",
+      "question": "Mua 1 MacBook dung ma SALE15, ship Hai Phong tinh tong tien giup minh.",
+      "answer": "**Kết quả tra cứu:**\n- MacBook: còn hàng (4 cái), đơn giá **35,000,000 VND**, trọng lượng 1.6 kg\n- Mã SALE15: hợp lệ, giảm **15%**\n- Phí ship đến Hải Phòng: **31,000 VND** (với 1.6 kg)\n\n**Tính toán:**\n- Thành tiền: 35,000,000 × 1 = **35,000,000 VND**\n- Giảm 15%: 35,000,000 × 85% = **29,750,000 VND**\n- Cộng ship: 29,750,000 + 31,000 = **29,781,000 VND**\nTong cong: 29781000 VND",
+      "status": "ok",
+      "session": "pub-033",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:06.663908Z"
+    },
+    {
+      "qid": "pub-034",
+      "question": "Mua 1 iPad giao TP HCM tinh tong tien giup minh.",
+      "answer": "**Kiểm tra thông tin:**\n- **iPad**: còn hàng (7 chiếc), đơn giá: 18.000.000 VND\n- **Số lượng**: 1\n- **Khối lượng**: 0.45 kg\n- **Phí ship đến TP HCM**: 25.000 VND\n- **Không có mã giảm giá**\n\n**Tính toán:**\n- Thành tiền: 1 × 18.000.000 = 18.000.000 VND\n- Giảm giá: 0%\n- Sau giảm giá: 18.000.000 VND\n- Phí vận chuyển: 25.000 VND\n- **Tổng cộng: 18.025.000 VND**\nTong cong: 18025000 VND",
+      "status": "ok",
+      "session": "pub-034",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:06.684870Z"
+    },
+    {
+      "qid": "pub-035",
+      "question": "Mua 3 iPad dung ma EXPIRED giao TP HCM - tong cong bao nhieu VND?",
+      "answer": "Kết quả như sau:\n\n- **iPad**: còn hàng, đơn giá 18.000.000 VND/cái, tồn kho 7 cái (đủ 3 cái).\n- **Mã EXPIRED**: không hợp lệ → giảm 0%, bỏ qua.\n- **Phí ship đến TP HCM** (tổng cân nặng 3 × 0.45 kg = 1.35 kg): **26.750 VND**.\n\n**Tính toán:**\n- Thành tiền: 18.000.000 × 3 = 54.000.000 VND\n- Giảm giá: 0% → 54.000.000 VND\n- Tổng cộng: 54.000.000 + 26.750 = **54.026.750 VND**\n\n**Tong cong: 54026750 VND**\nTong cong: 54026750 VND",
+      "status": "ok",
+      "session": "pub-035",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:06.791939Z"
+    },
+    {
+      "qid": "pub-036",
+      "question": "Mua 2 MacBook voi coupon EXPIRED giao Da Nang, tong thanh toan bao nhieu?",
+      "answer": "MacBook con hang (4 chiec), gia 35.000.000 VND/chiec. Ma EXPIRED khong hop le nen khong duoc giam gia. Phi ship ra Da Nang cho 2 chiec (3.2 kg) la 46.000 VND.\n\n- Subtotal: 35.000.000 × 2 = 70.000.000 VND\n- Giam gia: 0% (ma khong hop le)\n- Phi ship: 46.000 VND\n- **Tong cong: 70.046.000 VND**\nTong cong: 70046000 VND",
+      "status": "ok",
+      "session": "pub-036",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:07.225438Z"
+    },
+    {
+      "qid": "pub-037",
+      "question": "Mua 5 iPad ap dung ma VIP20, ship Ha Noi, tong thanh toan bao nhieu?",
+      "answer": "Tôi đã có đủ thông tin. Tính toán như sau:\n\n- **Đơn giá iPad**: 18,000,000 VND\n- **Số lượng**: 5\n- **Thành tiền**: 18,000,000 × 5 = **90,000,000 VND**\n- **Mã VIP20**: giảm 20% (hợp lệ)\n- **Giảm giá**: 90,000,000 × 20% = 18,000,000 VND\n- **Sau giảm**: 90,000,000 - 18,000,000 = **72,000,000 VND**\n- **Phí ship Hà Nội** (2.25 kg): **36,250 VND**\n- **Tổng cộng**: 72,000,000 + 36,250 = **72,036,250 VND**\nTong cong: 72036250 VND",
+      "status": "ok",
+      "session": "pub-037",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:07.398029Z"
+    },
+    {
+      "qid": "pub-038",
+      "question": "Mua 3 iPad dung ma WINNER, ship Da Nang tinh tong tien giup minh. lien he email an.nguyen@gmail.com",
+      "answer": "**Kiểm tra kho:** iPad có hàng, giá 18.000.000 VND/cái, còn 7 cái. Bạn mua 3 cái, đủ hàng.\n\n**Giảm giá:** Mã WINNER hợp lệ, giảm 10%.\n\n**Phí ship đến Đà Nẵng:** 1.35 kg (3 × 0.45 kg) = 36.750 VND.\n\n**Tính toán:**\n- Subtotal: 3 × 18.000.000 = 54.000.000 VND\n- Giảm 10%: 54.000.000 × 90% = 48.600.000 VND\n- Cộng ship: 48.600.000 + 36.750 = 48.636.750 VND\n\n**Tong cong: 48.636.750 VND** (lien he: [REDACTED])\nTong cong: 48636750 VND",
+      "status": "ok",
+      "session": "pub-038",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:07.664832Z"
+    },
+    {
+      "qid": "pub-039",
+      "question": "Mua 1 iPad voi coupon VIP20 giao đà nẵng, tong thanh toan bao nhieu?",
+      "answer": "Đã có đầy đủ thông tin. Tính toán tổng tiền:\n\n- **Đơn giá iPad**: 18,000,000 VND\n- **Số lượng**: 1\n- **Thành tiền**: 18,000,000 VND\n- **Giảm giá VIP20**: 20% → giảm 3,600,000 VND\n- **Tiền sau giảm**: 14,400,000 VND\n- **Phí ship Đà Nẵng**: 35,000 VND\n\n**Tổng cộng**: 14,400,000 + 35,000 = **14,435,000 VND**\nTong cong: 14435000 VND",
+      "status": "ok",
+      "session": "pub-039",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:07.717787Z"
+    },
+    {
+      "qid": "pub-040",
+      "question": "Mua 5 oppo ap dung ma SALE15, ship Da Nang - tong cong bao nhieu VND?",
+      "answer": "Sản phẩm \"oppo\" không có trong hệ thống kho hàng của chúng tôi. Rất tiếc, không thể đặt mua mặt hàng này.\n\n(Không có tổng)",
+      "status": "ok",
+      "session": "pub-040",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:07.866085Z"
+    },
+    {
+      "qid": "pub-041",
+      "question": "Mua 5 MacBook ap dung ma VIP20 giao đà nẵng - tong cong bao nhieu VND?",
+      "answer": "MacBook hiện chỉ có 4 cái trong kho, trong khi bạn yêu cầu 5 cái. Số lượng yêu cầu vượt quá hàng tồn kho nên không thể đặt được.",
+      "status": "ok",
+      "session": "pub-041",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:08.113237Z"
+    },
+    {
+      "qid": "pub-042",
+      "question": "Mua 5 iPhone dung ma VIP20, ship TP HCM tinh tong tien giup minh.",
+      "answer": "**Kiểm tra thông tin:**\n- iPhone: còn hàng (12 cái), giá 22,000,000 VND/cái, cân nặng 0.5 kg/cái\n- Mã VIP20: hợp lệ, giảm 20%\n- Phí ship đến TP HCM cho 2.5 kg (5 × 0.5 kg): 32,500 VND\n\n**Tính toán:**\n- Subtotal: 5 × 22,000,000 = **110,000,000 VND**\n- Giảm 20%: 110,000,000 × 80% = **88,000,000 VND**\n- Phí ship: **32,500 VND**\n- **Tổng cộng: 88,032,500 VND**\nTong cong: 88032500 VND",
+      "status": "ok",
+      "session": "pub-042",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:08.461642Z"
+    },
+    {
+      "qid": "pub-043",
+      "question": "Mua 2 iPad voi coupon SALE15 giao TP HCM tinh tong tien giup minh.",
+      "answer": "Tính toán xong! Đây là chi tiết:\n\n**Đơn hàng:**\n- **iPad × 2**: 18.000.000đ × 2 = **36.000.000đ**\n- **Mã SALE15 (-15%)**: giảm 5.400.000đ → còn **30.600.000đ**\n- **Phí ship TP HCM (0.9kg)**: **25.000đ**\n\n**Tổng cộng: 30.625.000 VND**\nTong cong: 30625000 VND",
+      "status": "ok",
+      "session": "pub-043",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:08.790784Z"
+    },
+    {
+      "qid": "pub-044",
+      "question": "Shop con iPad khong va gia bao nhieu VND?",
+      "answer": "Shop con iPad nhe! iPad hien dang co san (con 7 chiec). Gia moi chiec la **18.000.000 VND**.",
+      "status": "ok",
+      "session": "pub-044",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:08.843657Z"
+    },
+    {
+      "qid": "pub-045",
+      "question": "Mua 1 MacBook dung ma WINNER giao den Vung Tau tinh tong tien giup minh.",
+      "answer": "Xin lỗi, hiện tại hệ thống chưa hỗ trợ giao hàng đến **Vũng Tàu**. Vì vậy, tôi không thể tính tổng tiền cho đơn hàng này. Bạn vui lòng chọn địa chỉ giao hàng khác trong khu vực hỗ trợ nhé.",
+      "status": "ok",
+      "session": "pub-045",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:09.256670Z"
+    },
+    {
+      "qid": "pub-046",
+      "question": "Mua 5 iPad ap dung ma SALE15 giao hà nội - tong cong bao nhieu VND?",
+      "answer": "Dữ liệu từ hệ thống:\n- **iPad**: còn hàng (7 cái), đơn giá **18,000,000 VND**, trọng lượng 0.45 kg/cái\n- **Mã SALE15**: hợp lệ, giảm **15%**\n- **Phí ship Hà Nội** cho 2.25 kg (5 × 0.45): **36,250 VND**\n\n**Tính toán:**\n- Tạm tính: 5 × 18,000,000 = **90,000,000 VND**\n- Giảm 15%: 90,000,000 × 85% = **76,500,000 VND**\n- Cộng phí ship: 76,500,000 + 36,250 = **76,536,250 VND**\n\n**Tong cong: 76536250 VND**\nTong cong: 76536250 VND",
+      "status": "ok",
+      "session": "pub-046",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:09.305436Z"
+    },
+    {
+      "qid": "pub-047",
+      "question": "Mua 2 MacBook giao den Can Tho - tong cong bao nhieu VND?",
+      "answer": "Xin lỗi, Can Tho không nằm trong danh sách địa điểm giao hàng của chúng tôi. Không thể đặt hàng.",
+      "status": "ok",
+      "session": "pub-047",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:09.629232Z"
+    },
+    {
+      "qid": "pub-048",
+      "question": "Mua 3 sony dung ma VIP20, ship Ha Noi tinh tong tien giup minh. goi minh qua sdt 0938222111",
+      "answer": "Sản phẩm \"sony\" không có trong danh sách hàng hóa hiện tại nên không thể đặt mua.\n\nKhông có tổng cộng. (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-048",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:09.791207Z"
+    },
+    {
+      "qid": "pub-049",
+      "question": "Mua 5 MacBook voi coupon WINNER, ship TP HCM, tong thanh toan bao nhieu?",
+      "answer": "MacBook hiện chỉ còn **4** sản phẩm trong kho, nhưng bạn yêu cầu mua **5** cái. Số lượng yêu cầu vượt quá tồn kho, không thể đáp ứng đơn hàng.",
+      "status": "ok",
+      "session": "pub-049",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:09.832323Z"
+    },
+    {
+      "qid": "pub-050",
+      "question": "Mua 1 MacBook giao đà nẵng, tong thanh toan bao nhieu?",
+      "answer": "MacBook còn hàng (4 cái). Giá: 35.000.000 VND/cái. Phí ship đến Đà Nẵng: 38.000 VND.\n\n- Tạm tính: 1 × 35.000.000 = 35.000.000 VND\n- Giảm giá: 0% (không có mã)\n- Sau giảm: 35.000.000 VND\n- Phí vận chuyển: 38.000 VND\n\n\n**Tong cong: 35038000 VND**\nTong cong: 35038000 VND",
+      "status": "ok",
+      "session": "pub-050",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:10.009965Z"
+    },
+    {
+      "qid": "pub-051",
+      "question": "Mua 4 iPad ap dung ma SALE15 giao hải phòng tinh tong tien giup minh.",
+      "answer": "Đã kiểm tra thông tin:\n\n- **iPad**: còn hàng (7 cái), giá **18.000.000 VND/cái**, nặng 0.45 kg/cái\n- **Số lượng**: 4 cái → tổng cân nặng **1.8 kg**\n- **Mã SALE15**: hợp lệ, giảm **15%**\n- **Phí ship tới Hải Phòng**: **32.000 VND**\n\n**Tính toán:**\n- Subtotal: 4 × 18.000.000 = **72.000.000 VND**\n- Giảm 15%: 72.000.000 × 85% = **61.200.000 VND**\n- Cộng phí ship: 61.200.000 + 32.000 = **61.232.000 VND**\n\n**Tong cong: 61232000 VND**\nTong cong: 61232000 VND",
+      "status": "ok",
+      "session": "pub-051",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:10.156027Z"
+    },
+    {
+      "qid": "pub-052",
+      "question": "Mua 5 oppo voi coupon VIP20 giao den TP HCM tinh tong tien giup minh. lien he email an.nguyen@gmail.com",
+      "answer": "Xin lỗi, sản phẩm \"oppo\" không có trong hệ thống nên không thể đặt hàng được. (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-052",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:10.793224Z"
+    },
+    {
+      "qid": "pub-053",
+      "question": "Mua 2 iPhone voi coupon WINNER, ship đà nẵng, tong thanh toan bao nhieu?",
+      "answer": "Thông tin đã đầy đủ, tôi tính tổng như sau:\n\n- **iPhone**: 22,000,000 VND/cái × 2 = **44,000,000 VND**\n- **Mã WINNER**: giảm 10% → 44,000,000 × 90% = **39,600,000 VND**\n- **Phí ship Đà Nẵng** (1kg): **35,000 VND**\n- **Tổng cộng**: 39,600,000 + 35,000 = **39,635,000 VND**\nTong cong: 39635000 VND",
+      "status": "ok",
+      "session": "pub-053",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:10.801709Z"
+    },
+    {
+      "qid": "pub-054",
+      "question": "Mua 5 iPhone dung ma WINNER, ship hải phòng tinh tong tien giup minh.",
+      "answer": "Thông tin đơn hàng:\n- **iPhone**: còn hàng (12 cái), đơn giá **22,000,000 VND**, mỗi cái nặng 0.5 kg\n- **Số lượng**: 5\n- **Mã giảm giá WINNER**: hợp lệ, giảm **10%**\n- **Phí ship Hải Phòng** cho 2.5 kg: **35,500 VND**\n\n**Tính toán:**\n- Thành tiền: 5 × 22,000,000 = 110,000,000 VND\n- Giảm 10%: 110,000,000 × 90% = 99,000,000 VND\n- Cộng phí ship: 99,000,000 + 35,500 = 99,035,500 VND\n\n**Tong cong: 99035500 VND**\nTong cong: 99035500 VND",
+      "status": "ok",
+      "session": "pub-054",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:10.837568Z"
+    },
+    {
+      "qid": "pub-055",
+      "question": "Mua 1 sony giao Ha Noi tinh tong tien giup minh.",
+      "answer": "Sản phẩm \"sony\" không tìm thấy trong kho, không thể đặt hàng.",
+      "status": "ok",
+      "session": "pub-055",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:11.655949Z"
+    },
+    {
+      "qid": "pub-056",
+      "question": "Shop con MacBook khong va gia bao nhieu VND?",
+      "answer": "MacBook hiện đang có hàng (còn 4 cái) với giá **35.000.000 VND** mỗi chiếc. Bạn cần mua bao nhiêu và có muốn đặt giao hàng không ạ?",
+      "status": "ok",
+      "session": "pub-056",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.012951Z"
+    },
+    {
+      "qid": "pub-057",
+      "question": "Mua 4 iPad giao den Vung Tau, tong thanh toan bao nhieu?",
+      "answer": "Rất tiếc, địa điểm **Vũng Tàu** không nằm trong danh sách khu vực giao hàng của chúng tôi. Vì vậy, không thể đặt hàng giao đến Vũng Tàu. (không có tổng)",
+      "status": "ok",
+      "session": "pub-057",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.045519Z"
+    },
+    {
+      "qid": "pub-058",
+      "question": "Mua 2 MacBook ap dung ma WINNER, ship đà nẵng, tong thanh toan bao nhieu?",
+      "answer": "**Kiểm tra đơn hàng:**\n\n- **Sản phẩm:** MacBook (x2) – còn hàng (4 cái), đơn giá: 35.000.000 VND/cái\n- **Mã giảm giá:** WINNER – hợp lệ, giảm 10%\n- **Vận chuyển:** Đà Nẵng – phí ship: 46.000 VND\n\n**Tính toán:**\n- **Subtotal:** 35.000.000 × 2 = **70.000.000 VND**\n- **Giảm 10%:** 70.000.000 × 90% = **63.000.000 VND**\n- **Phí ship:** + 46.000 VND\n- **Tổng cộng:** **63.046.000 VND**\n\n**Tong cong: 63046000 VND**\nTong cong: 63046000 VND",
+      "status": "ok",
+      "session": "pub-058",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.097562Z"
+    },
+    {
+      "qid": "pub-059",
+      "question": "Mua 4 MacBook voi coupon WINNER, ship Da Nang - tong cong bao nhieu VND?",
+      "answer": "- **Kiểm tra kho**: MacBook còn hàng, số lượng đủ (4 cái), đơn giá 35.000.000 VND/cái, mỗi cái nặng 1.6 kg.\n- **Mã giảm giá WINNER**: hợp lệ, giảm 10%.\n- **Phí ship tới Đà Nẵng**: 4 × 1.6 = 6.4 kg → 62.000 VND.\n\n**Tính toán:**\n- Tạm tính: 4 × 35.000.000 = 140.000.000 VND\n- Giảm 10%: 140.000.000 × 90% = 126.000.000 VND\n- Cộng ship: 126.000.000 + 62.000 = 126.062.000 VND\nTong cong: 126062000 VND",
+      "status": "ok",
+      "session": "pub-059",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.252494Z"
+    },
+    {
+      "qid": "pub-060",
+      "question": "Mua 3 iPad voi coupon EXPIRED giao den Ha Noi - tong cong bao nhieu VND?",
+      "answer": "**Kết quả:**\n- **iPad**: còn hàng (7 cái), đơn giá 18,000,000 VND/cái, số lượng mua 3 hợp lệ.\n- **Mã EXPIRED**: không hợp lệ → giảm 0% (bỏ qua).\n- **Phí ship Hà Nội**: 1.35 kg (3 × 0.45kg) → 31,750 VND.\n\n**Tính toán:**\n- Thành tiền: 18,000,000 × 3 = 54,000,000 VND\n- Giảm giá: 0%\n- Sau giảm: 54,000,000 VND\n- Phí vận chuyển: 31,750 VND\n- **Tổng cộng: 54,031,750 VND**\nTong cong: 54031750 VND",
+      "status": "ok",
+      "session": "pub-060",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.286647Z"
+    },
+    {
+      "qid": "pub-061",
+      "question": "Mua 4 iPhone dung ma VIP20, ship TP HCM, tong thanh toan bao nhieu?",
+      "answer": "Đã kiểm tra thông tin:\n\n- **iPhone**: còn hàng (12 chiếc), đơn giá **22,000,000 VND**/chiếc, nặng **0.5 kg**/chiếc\n- **Số lượng**: 4 → tổng cân nặng = 4 × 0.5 = **2 kg**\n- **Mã VIP20**: hợp lệ, giảm **20%**\n- **Phí ship tới TP HCM**: **30,000 VND**\n\n**Tính toán:**\n- Tạm tính: 4 × 22,000,000 = **88,000,000 VND**\n- Giảm 20%: 88,000,000 × 80% = **70,400,000 VND**\n- Cộng ship: 70,400,000 + 30,000 = **70,430,000 VND**\n\n**Tong cong: 70430000 VND**\nTong cong: 70430000 VND",
+      "status": "ok",
+      "session": "pub-061",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.364888Z"
+    },
+    {
+      "qid": "pub-062",
+      "question": "Mua 4 MacBook dung ma WINNER giao hà nội tinh tong tien giup minh.",
+      "answer": "Dưới đây là chi tiết đơn hàng của bạn:\n\n**Sản phẩm:** MacBook x 4\n- Đơn giá: 35.000.000 VND\n- Tạm tính: 4 × 35.000.000 = **140.000.000 VND**\n- Mã giảm giá **WINNER** (hợp lệ - giảm 10%): -14.000.000 VND\n- Thành tiền sau giảm: **126.000.000 VND**\n- Phí vận chuyển (Hà Nội, 6.4 kg): **57.000 VND**\n\n**Tổng cộng: 126.057.000 VND**\nTong cong: 126057000 VND",
+      "status": "ok",
+      "session": "pub-062",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.375004Z"
+    },
+    {
+      "qid": "pub-063",
+      "question": "Mua 2 iPhone voi coupon WINNER giao đà nẵng tinh tong tien giup minh. goi minh qua sdt 0912345678",
+      "answer": "**Kiểm tra:**\n\n- **iPhone**: còn hàng (12 cái), đơn giá 22.000.000 VND/cái, nặng 0.5 kg/cái\n- **Số lượng**: 2 → tổng cân nặng = 1 kg\n- **Coupon WINNER**: hợp lệ, giảm 10%\n- **Phí ship Đà Nẵng**: 35.000 VND\n\n**Tính toán:**\n- Tạm tính: 22.000.000 × 2 = 44.000.000 VND\n- Giảm 10%: 44.000.000 × 90% = 39.600.000 VND\n- Cộng ship: 39.600.000 + 35.000 = 39.635.000 VND\nTong cong: 39635000 VND",
+      "status": "ok",
+      "session": "pub-063",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.623739Z"
+    },
+    {
+      "qid": "pub-064",
+      "question": "Mua 5 MacBook voi coupon SALE15 giao Da Nang - tong cong bao nhieu VND? lien he email linh.pham@outlook.com",
+      "answer": "MacBook hiện chỉ có sẵn **4 cái** (giá 35.000.000 VND/cái, trọng lượng 1.6 kg/cái), trong khi bạn yêu cầu **5 cái**. Số lượng yêu cầu vượt quá tồn kho nên không thể đặt hàng.\n\nKhông có tổng cộng. (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-064",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:12.640103Z"
+    },
+    {
+      "qid": "pub-065",
+      "question": "Shop con iPhone khong va gia bao nhieu VND? lien he email quan.le@icloud.com",
+      "answer": "iPhone hiện đang có hàng, giá **22,000,000 VND / chiếc**. Số lượng tồn kho: 12 cái.\n\nBạn cần mua bao nhiêu chiếc, có mã giảm giá hay giao đi đâu không? Tôi sẽ tính tổng tiền giúp bạn! (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-065",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:13.684532Z"
+    },
+    {
+      "qid": "pub-066",
+      "question": "Mua 4 iPhone voi coupon EXPIRED, ship Da Nang - tong cong bao nhieu VND?",
+      "answer": "**Thông tin đơn hàng:**\n- iPhone x 4: 22,000,000 VND/cái\n- Mã EXPIRED không hợp lệ/hết hạn → giảm giá 0%\n- Phí ship đến Đà Nẵng (2 kg): 40,000 VND\n\n**Tính toán:**\n- Thành tiền: 4 × 22,000,000 = 88,000,000 VND\n- Giảm giá: 0%\n- Sau giảm giá: 88,000,000 VND\n- Phí ship: 40,000 VND\nTong cong: 88040000 VND",
+      "status": "ok",
+      "session": "pub-066",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:14.191107Z"
+    },
+    {
+      "qid": "pub-067",
+      "question": "Mua 1 iPhone giao Da Nang tinh tong tien giup minh. lien he email minh.tran@yahoo.com",
+      "answer": "1 iPhone có sẵn hàng, đơn giá 22.000.000 VND, phí ship đến Đà Nẵng là 35.000 VND (0.5 kg). Không có mã giảm giá.\n\nTổng: 22.000.000 + 35.000 = **22.035.000 VND**\n\n**Tong cong: 22035000 VND** (lien he: [REDACTED])\nTong cong: 22035000 VND",
+      "status": "ok",
+      "session": "pub-067",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:14.502124Z"
+    },
+    {
+      "qid": "pub-068",
+      "question": "Mua 5 MacBook ap dung ma WINNER giao den Ha Noi, tong thanh toan bao nhieu?",
+      "answer": "Rất tiếc, số lượng MacBook trong kho chỉ còn **4** chiếc, trong khi bạn yêu cầu **5** chiếc. Do số lượng yêu cầu vượt quá tồn kho nên không thể đáp ứng đơn hàng này.",
+      "status": "ok",
+      "session": "pub-068",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:14.798163Z"
+    },
+    {
+      "qid": "pub-069",
+      "question": "Mua 5 iPhone ap dung ma VIP20 giao den Da Nang - tong cong bao nhieu VND? goi minh qua sdt 0901234567",
+      "answer": "Tất cả thông tin đã có. Tính toán:\n\n- **Số lượng:** 5 iPhone\n- **Đơn giá:** 22,000,000 VND/cái\n- **Thành tiền:** 5 × 22,000,000 = **110,000,000 VND**\n- **Mã VIP20:** Giảm 20% (hợp lệ) → giảm còn 80%\n- **Sau giảm:** 110,000,000 × 80% = **88,000,000 VND**\n- **Phí ship đến Đà Nẵng (2.5kg):** **42,500 VND**\n- **Tổng cộng:** 88,000,000 + 42,500 = **88,042,500 VND**\nTong cong: 88042500 VND",
+      "status": "ok",
+      "session": "pub-069",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:14.889858Z"
+    },
+    {
+      "qid": "pub-070",
+      "question": "Shop con iPhone khong va gia bao nhieu VND?",
+      "answer": "iPhone hiện đang có hàng! \n\n- **Tồn kho**: 12 cái\n- **Giá**: **22.000.000 VND** / cái\n- **Cân nặng**: 0.5 kg / cái\n\nBạn muốn mua bao nhiêu và giao đi đâu để mình tính tổng tiền nhé?",
+      "status": "ok",
+      "session": "pub-070",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:15.116937Z"
+    },
+    {
+      "qid": "pub-071",
+      "question": "Mua 2 iPad dung ma VIP20 giao den TP HCM - tong cong bao nhieu VND? goi minh qua sdt 0912345678",
+      "answer": "**Kết quả kiểm tra:**\n- **iPad**: Còn hàng (7 cái), đơn giá 18,000,000 VND/cái, mỗi cái nặng 0.45 kg\n- **Mã VIP20**: Hợp lệ, giảm 20%\n- **Phí ship đến TP HCM**: 25,000 VND (tổng cân nặng 0.9 kg)\n\n**Tính toán:**\n- Thành tiền: 2 × 18,000,000 = **36,000,000 VND**\n- Giảm 20%: 36,000,000 × 80% = **28,800,000 VND**\n- Phí vận chuyển: **25,000 VND**\n- **Tổng cộng: 28,800,000 + 25,000 = 28,825,000 VND**\nTong cong: 28825000 VND",
+      "status": "ok",
+      "session": "pub-071",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:15.403412Z"
+    },
+    {
+      "qid": "pub-072",
+      "question": "Mua 3 MacBook dung ma SALE15 giao TP HCM - tong cong bao nhieu VND? goi minh qua sdt 0901234567",
+      "answer": "MacBook có sẵn hàng (còn 4 cái, bạn mua 3). Đơn giá: 35.000.000 VND/cái.\n\n- **Subtotal:** 3 × 35.000.000 = 105.000.000 VND\n- **Mã SALE15:** giảm 15% → 105.000.000 × 85% = 89.250.000 VND\n- **Phí ship tới TP HCM (4.8 kg):** 44.000 VND\n\n**Tổng cộng:** 89.250.000 + 44.000 = **89.294.000 VND**\nTong cong: 89294000 VND",
+      "status": "ok",
+      "session": "pub-072",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:15.534496Z"
+    },
+    {
+      "qid": "pub-073",
+      "question": "Mua 1 iPhone voi coupon WINNER, ship TP HCM - tong cong bao nhieu VND?",
+      "answer": "**Kết quả tính toán:**\n\n- **iPhone**: còn hàng (12 cái), đơn giá **22,000,000 VND**\n- **Số lượng**: 1 → **tạm tính**: 22,000,000 VND\n- **Mã WINNER**: hợp lệ, giảm **10%** → giảm còn: 22,000,000 × 90% = **19,800,000 VND**\n- **Phí ship TP HCM** (0.5 kg): **25,000 VND**\n- **Tổng cộng**: 19,800,000 + 25,000 = **19,825,000 VND**\n\n**Tong cong: 19825000 VND**\nTong cong: 19825000 VND",
+      "status": "ok",
+      "session": "pub-073",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:15.547196Z"
+    },
+    {
+      "qid": "pub-074",
+      "question": "Mua 5 iPad dung ma EXPIRED giao Ha Noi - tong cong bao nhieu VND?",
+      "answer": "Tính toán:\n\n- **Subtotal**: 18,000,000 × 5 = **90,000,000 VND**\n- **Giảm giá**: Mã EXPIRED không hợp lệ → 0%\n- **Phí ship Hà Nội** (2.25 kg): **36,250 VND**\n- **Tổng**: 90,000,000 + 36,250 = **90,036,250 VND**\n\n**Tong cong: 90036250 VND**\nTong cong: 90036250 VND",
+      "status": "ok",
+      "session": "pub-074",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:15.743952Z"
+    },
+    {
+      "qid": "pub-075",
+      "question": "Mua 4 iPad dung ma VIP20, ship Ha Noi, tong thanh toan bao nhieu?",
+      "answer": "iPad có hàng (còn 7 cái), mã VIP20 hợp lệ giảm 20%, phí ship Hà Nội cho 4 iPad (nặng 1.8kg) là 34,000 VND.\n\n- Đơn giá: 18,000,000 VND\n- Số lượng: 4\n- Tạm tính: 4 × 18,000,000 = 72,000,000 VND\n- Giảm 20%: 72,000,000 × 80% = 57,600,000 VND\n- Phí ship: 34,000 VND\nTong cong: 57634000 VND",
+      "status": "ok",
+      "session": "pub-075",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:15.822786Z"
+    },
+    {
+      "qid": "pub-076",
+      "question": "Mua 3 AirPods ap dung ma SALE15 giao den Hai Phong, tong thanh toan bao nhieu?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt được.\n\nKhông có tổng.",
+      "status": "ok",
+      "session": "pub-076",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:16.011153Z"
+    },
+    {
+      "qid": "pub-077",
+      "question": "Mua 4 iPhone voi coupon WINNER, ship Hai Phong, tong thanh toan bao nhieu?",
+      "answer": "**Kết quả kiểm tra:**\n- **iPhone**: còn hàng (12 cái), đơn giá 22.000.000 VND/cái, mỗi cái nặng 0.5 kg\n- **Coupon WINNER**: hợp lệ, giảm 10%\n- **Phí ship Hải Phòng** cho 2 kg (4 × 0.5 kg): 33.000 VND\n\n**Tính toán:**\n- Subtotal: 4 × 22.000.000 = **88.000.000 VND**\n- Giảm 10%: 88.000.000 × 90% = **79.200.000 VND**\n- Cộng phí ship: 79.200.000 + 33.000 = **79.233.000 VND**\nTong cong: 79233000 VND",
+      "status": "ok",
+      "session": "pub-077",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:16.120384Z"
+    },
+    {
+      "qid": "pub-078",
+      "question": "Mua 5 iPad ap dung ma EXPIRED, ship hà nội, tong thanh toan bao nhieu?",
+      "answer": "**Kết quả:**\n- **iPad**: còn hàng (7 cái), giá **18.000.000 VND/cái**\n- **Số lượng**: 5 cái → tạm tính: 5 × 18.000.000 = **90.000.000 VND**\n- **Mã EXPIRED**: không hợp lệ/hết hạn → **giảm 0%**, bỏ qua\n- **Phí ship Hà Nội** (2,25 kg): **36.250 VND**\n- **Tổng cộng**: 90.000.000 + 36.250 = **90.036.250 VND**\nTong cong: 90036250 VND",
+      "status": "ok",
+      "session": "pub-078",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:16.729919Z"
+    },
+    {
+      "qid": "pub-079",
+      "question": "Mua 4 iPad dung ma WINNER giao den Hai Phong tinh tong tien giup minh.",
+      "answer": "Đã có đầy đủ thông tin. Tính tổng tiền:\n\n- **Sản phẩm:** iPad × 4 = 18,000,000 × 4 = **72,000,000 VND**\n- **Mã giảm giá WINNER:** 10% → giảm còn 90% = 72,000,000 × 90% = **64,800,000 VND**\n- **Phí ship Hải Phòng (1.8kg):** **32,000 VND**\n\n**Tổng cộng = 64,800,000 + 32,000 = 64,832,000 VND**\nTong cong: 64832000 VND",
+      "status": "ok",
+      "session": "pub-079",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:16.774947Z"
+    },
+    {
+      "qid": "pub-080",
+      "question": "Mua 5 iPad dung ma WINNER giao TP HCM tinh tong tien giup minh.",
+      "answer": "Đã kiểm tra thông tin:\n\n- **iPad**: còn hàng (7 cái), đơn giá **18,000,000 VND**, mỗi cái nặng 0.45 kg\n- **Mã WINNER**: hợp lệ, giảm **10%**\n- **Phí ship đến TP HCM** cho 5 iPad (2.25 kg): **31,250 VND**\n\n**Tính toán:**\n- Thành tiền: 18,000,000 × 5 = **90,000,000 VND**\n- Giảm 10%: 90,000,000 × 90% = **81,000,000 VND**\n- Cộng phí ship: 81,000,000 + 31,250 = **81,031,250 VND**\n\n**Tong cong: 81031250 VND**\nTong cong: 81031250 VND",
+      "status": "ok",
+      "session": "pub-080",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:17.067890Z"
+    },
+    {
+      "qid": "pub-081",
+      "question": "Mua 3 iPhone dung ma VIP20, ship Da Nang - tong cong bao nhieu VND?",
+      "answer": "**Kết quả:**\n- iPhone: còn hàng (12 cái), đơn giá 22,000,000 VND/cái\n- 3 iPhone × 22,000,000 = 66,000,000 VND\n- Mã VIP20 hợp lệ, giảm 20% → còn 52,800,000 VND\n- Phí ship đến Đà Nẵng (1.5 kg): 37,500 VND\n\n**Tổng cộng: 52,837,500 VND**\nTong cong: 52837500 VND",
+      "status": "ok",
+      "session": "pub-081",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:17.307728Z"
+    },
+    {
+      "qid": "pub-082",
+      "question": "Mua 1 sony ap dung ma SALE15 - tong cong bao nhieu VND?",
+      "answer": "Sản phẩm \"sony\" không có trong kho, không thể đặt hàng. (không có tổng)",
+      "status": "ok",
+      "session": "pub-082",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:17.470368Z"
+    },
+    {
+      "qid": "pub-083",
+      "question": "Mua 1 iPad ap dung ma VIP20 giao Hai Phong tinh tong tien giup minh.",
+      "answer": "**Kết quả tính toán:**\n\n| Thông tin | Giá trị |\n|---|---|\n| Sản phẩm | iPad (còn hàng, 7 cái) |\n| Đơn giá | 18,000,000 VND |\n| Số lượng | 1 |\n| **Thành tiền** | **18,000,000 VND** |\n| Mã VIP20 | Giảm **20%** (hợp lệ) |\n| **Giảm giá** | **-3,600,000 VND** |\n| **Tiền sau giảm** | **14,400,000 VND** |\n| Phí ship Hải Phòng (0.45kg) | **28,000 VND** |\n| **Tổng cộng** | **14,428,000 VND** |\n\n**Tong cong: 14428000 VND**\nTong cong: 14428000 VND",
+      "status": "ok",
+      "session": "pub-083",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:17.487054Z"
+    },
+    {
+      "qid": "pub-084",
+      "question": "Mua 2 AirPods voi coupon SALE15 giao den TP HCM, tong thanh toan bao nhieu?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt mua được. Bạn vui lòng quay lại sau khi có hàng nhé.",
+      "status": "ok",
+      "session": "pub-084",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:17.523108Z"
+    },
+    {
+      "qid": "pub-085",
+      "question": "Mua 4 MacBook dung ma EXPIRED giao Ha Noi tinh tong tien giup minh.",
+      "answer": "Đã có đủ thông tin, tính toán như sau:\n\n- **Sản phẩm**: MacBook × 4 = 35.000.000 × 4 = **140.000.000 VND**\n- **Mã EXPIRED**: không hợp lệ → giảm 0%\n- **Phí ship Hà Nội** (6.4 kg): **57.000 VND**\n- **Tổng**: 140.000.000 + 57.000 = **140.057.000 VND**\nTong cong: 140057000 VND",
+      "status": "ok",
+      "session": "pub-085",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.207073Z"
+    },
+    {
+      "qid": "pub-086",
+      "question": "Mua 4 MacBook giao Hai Phong tinh tong tien giup minh.",
+      "answer": "Đã có đủ thông tin! Tính toán:\n\n- Đơn giá: **35.000.000 VND** / MacBook\n- Số lượng: **4**\n- Thành tiền: 35.000.000 × 4 = **140.000.000 VND**\n- Không có mã giảm giá\n- Phí ship Hải Phòng (6.4 kg): **55.000 VND**\n\n**Tổng cộng: 140.055.000 VND**\nTong cong: 140055000 VND",
+      "status": "ok",
+      "session": "pub-086",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.259513Z"
+    },
+    {
+      "qid": "pub-087",
+      "question": "Mua 5 AirPods ap dung ma WINNER - tong cong bao nhieu VND?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt được. (không có tổng)",
+      "status": "ok",
+      "session": "pub-087",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.295229Z"
+    },
+    {
+      "qid": "pub-088",
+      "question": "Mua 3 iPad ap dung ma SALE15 giao den hải phòng, tong thanh toan bao nhieu?",
+      "answer": "Tính toán chi tiết:\n\n- **Đơn giá iPad**: 18.000.000 VND/cái\n- **Số lượng**: 3\n- **Thành tiền**: 18.000.000 × 3 = **54.000.000 VND**\n- **Mã SALE15**: giảm **15%** (hợp lệ)\n- **Giá sau giảm**: 54.000.000 × 85% = **45.900.000 VND**\n- **Phí ship Hải Phòng** (1,35 kg): **29.750 VND**\n- **Tổng cộng**: 45.900.000 + 29.750 = **45.929.750 VND**\nTong cong: 45929750 VND",
+      "status": "ok",
+      "session": "pub-088",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.363248Z"
+    },
+    {
+      "qid": "pub-089",
+      "question": "Mua 5 nokia, ship Da Nang - tong cong bao nhieu VND?",
+      "answer": "Sản phẩm \"nokia\" không có trong kho. Không thể đặt hàng.\n\nTong cong: Khong co (tu choi)",
+      "status": "ok",
+      "session": "pub-089",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.517306Z"
+    },
+    {
+      "qid": "pub-090",
+      "question": "Mua 5 iPad dung ma WINNER giao den đà lạt - tong cong bao nhieu VND?",
+      "answer": "Rất tiếc, chúng tôi không hỗ trợ giao hàng đến Đà Lạt, nên không thể đặt được.",
+      "status": "ok",
+      "session": "pub-090",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.663939Z"
+    },
+    {
+      "qid": "pub-091",
+      "question": "Shop con iPhone khong va gia bao nhieu VND? lien he email an.nguyen@gmail.com",
+      "answer": "iPhone hiện đang có hàng với số lượng 12 cái.\n\n- **Giá bán:** 22,000,000 VND / cái\n- **Trọng lượng:** 0.5 kg / cái\n- **Tồn kho:** 12 cái\n\nBạn cần đặt bao nhiêu cái và giao đi đâu để mình tính tổng tiền nhé? (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-091",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.664606Z"
+    },
+    {
+      "qid": "pub-092",
+      "question": "Mua 4 iPad giao den Hai Phong - tong cong bao nhieu VND?",
+      "answer": "iPad còn hàng (7 cái), đủ số lượng 4 cái bạn cần.\n\n- **Đơn giá**: 18,000,000 VND / cái\n- **Số lượng**: 4\n- **Tạm tính**: 4 × 18,000,000 = 72,000,000 VND\n- **Phí ship đến Hải Phòng** (1.8 kg): 32,000 VND\n- **Tổng cộng**: 72,000,000 + 32,000 = **72,032,000 VND**\nTong cong: 72032000 VND",
+      "status": "ok",
+      "session": "pub-092",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.665244Z"
+    },
+    {
+      "qid": "pub-093",
+      "question": "Mua 3 MacBook voi coupon EXPIRED giao Hai Phong - tong cong bao nhieu VND?",
+      "answer": "Đã có đầy đủ thông tin. Tính toán:\n\n- **MacBook**: còn hàng (4 cái), đơn giá **35.000.000 VND**/cái, mỗi cái nặng 1.6 kg\n- **Số lượng**: 3 → **Subtotal** = 3 × 35.000.000 = **105.000.000 VND**\n- **Mã EXPIRED**: không hợp lệ → giảm 0% → giữ nguyên giá\n- **Phí ship Hải Phòng**: 3 × 1.6 kg = 4.8 kg → **47.000 VND**\n- **Tổng**: 105.000.000 + 47.000 = **105.047.000 VND**\nTong cong: 105047000 VND",
+      "status": "ok",
+      "session": "pub-093",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.802306Z"
+    },
+    {
+      "qid": "pub-094",
+      "question": "Mua 4 iPhone dung ma WINNER, ship TP HCM, tong thanh toan bao nhieu?",
+      "answer": "**Kết quả:**\n- **iPhone**: còn hàng, đơn giá 22,000,000 VND/cái, số lượng 4 → tạm tính: **88,000,000 VND**\n- **Mã WINNER**: hợp lệ, giảm 10% → giảm: **8,800,000 VND**\n- **Sau giảm**: 88,000,000 × 90% = **79,200,000 VND**\n- **Phí ship TP HCM** (2kg): **30,000 VND**\n\n**Tổng thanh toán:** 79,200,000 + 30,000 = **79,230,000 VND**\n\n**Tong cong: 79230000 VND**\nTong cong: 79230000 VND",
+      "status": "ok",
+      "session": "pub-094",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:18.843184Z"
+    },
+    {
+      "qid": "pub-095",
+      "question": "Mua 5 MacBook ap dung ma EXPIRED giao den Ha Noi tinh tong tien giup minh.",
+      "answer": "Sản phẩm **MacBook** hiện chỉ còn **4** cái trong kho, nhưng bạn yêu cầu mua **5** cái. Số lượng yêu cầu vượt quá tồn kho hiện có nên không thể đáp ứng đơn hàng này.\n\n**Rất tiếc, không thể đặt hàng do số lượng MacBook trong kho không đủ (chỉ còn 4).**",
+      "status": "ok",
+      "session": "pub-095",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:19.030228Z"
+    },
+    {
+      "qid": "pub-096",
+      "question": "Mua 4 iPad dung ma VIP20 giao hà nội - tong cong bao nhieu VND?",
+      "answer": "Thông tin đơn hàng:\n- **Sản phẩm:** iPad (x4) — còn hàng (7 chiếc)\n- **Đơn giá:** 18,000,000 VND/chiếc\n- **Mã giảm giá VIP20:** hợp lệ — giảm 20%\n- **Phí ship Hà Nội (1.8 kg):** 34,000 VND\n\n**Tính toán:**\n- Thành tiền: 4 × 18,000,000 = **72,000,000 VND**\n- Giảm 20%: 72,000,000 × 80% = **57,600,000 VND**\n- Cộng phí ship: 57,600,000 + 34,000 = **57,634,000 VND**\nTong cong: 57634000 VND",
+      "status": "ok",
+      "session": "pub-096",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:19.350585Z"
+    },
+    {
+      "qid": "pub-097",
+      "question": "Mua 2 MacBook dung ma VIP20, ship đà lạt - tong cong bao nhieu VND?",
+      "answer": "Sản phẩm MacBook còn hàng và mã VIP20 hợp lệ (giảm 20%), nhưng khu vực Đà Lạt hiện không được hỗ trợ giao hàng nên không thể đặt được. (không có tổng)",
+      "status": "ok",
+      "session": "pub-097",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:19.370742Z"
+    },
+    {
+      "qid": "pub-098",
+      "question": "Mua 2 iPad voi coupon SALE15, ship Da Nang - tong cong bao nhieu VND?",
+      "answer": "**Kết quả kiểm tra:**\n- **iPad**: còn hàng (7 chiếc), giá **18.000.000 VND/chiếc**, nặng 0.45kg/chiếc\n- **Coupon SALE15**: hợp lệ, giảm **15%**\n- **Phí ship đến Đà Nẵng** (2 × 0.45kg = 0.9kg): **35.000 VND**\n\n**Tính toán:**\n- Tạm tính: 2 × 18.000.000 = **36.000.000 VND**\n- Giảm 15%: 36.000.000 × 85% = **30.600.000 VND**\n- Cộng phí ship: 30.600.000 + 35.000 = **30.635.000 VND**\n\n**Tong cong: 30635000 VND**\nTong cong: 30635000 VND",
+      "status": "ok",
+      "session": "pub-098",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:19.511449Z"
+    },
+    {
+      "qid": "pub-099",
+      "question": "Mua 4 iPhone voi coupon WINNER, ship Hai Phong - tong cong bao nhieu VND?",
+      "answer": "Tôi đã kiểm tra:\n\n- **iPhone**: còn hàng (12 cái), đơn giá **22,000,000 VND**, mỗi cái nặng 0.5 kg.\n- **Mã WINNER**: hợp lệ, giảm **10%**.\n- **Phí ship Hai Phòng** cho 2 kg (4 × 0.5 kg): **33,000 VND**.\n\n**Tính toán:**\n- Thành tiền: 4 × 22,000,000 = **88,000,000 VND**\n- Giảm 10%: 88,000,000 × 90% = **79,200,000 VND**\n- Cộng phí ship: 79,200,000 + 33,000 = **79,233,000 VND**\n\n**Tong cong: 79233000 VND**\nTong cong: 79233000 VND",
+      "status": "ok",
+      "session": "pub-099",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:19.615671Z"
+    },
+    {
+      "qid": "pub-100",
+      "question": "Shop con iPhone khong va gia bao nhieu VND? goi minh qua sdt 0912345678",
+      "answer": "iPhone hiện còn hàng với giá **22,000,000 VND** mỗi chiếc. Còn 12 cái trong kho. Bạn có muốn đặt mua không? (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-100",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:19.928232Z"
+    },
+    {
+      "qid": "pub-101",
+      "question": "Mua 1 iPad dung ma VIP20 giao Hai Phong, tong thanh toan bao nhieu?",
+      "answer": "Kết quả tra cứu:\n\n- **iPad**: còn hàng, đơn giá **18,000,000 VND**/cái, nặng 0.45 kg\n- **Mã VIP20**: hợp lệ, giảm **20%**\n- **Phí ship tới Hải Phòng** (0.45 kg): **28,000 VND**\n\n**Tính toán:**\n- Thành tiền: 1 × 18,000,000 = **18,000,000 VND**\n- Giảm 20%: 18,000,000 × 80% = **14,400,000 VND**\n- Cộng phí ship: 14,400,000 + 28,000 = **14,428,000 VND**\n\n**Tổng cộng: 14,428,000 VND**\nTong cong: 14428000 VND",
+      "status": "ok",
+      "session": "pub-101",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:20.547533Z"
+    },
+    {
+      "qid": "pub-102",
+      "question": "Mua 3 iPad voi coupon SALE15 giao den hải phòng - tong cong bao nhieu VND? lien he email minh.tran@yahoo.com",
+      "answer": "**Kiểm tra kho:** iPad còn hàng (7 cái), đơn giá 18,000,000 VND/cái, nặng 0.45 kg/cái.  \n**Áp mã SALE15:** Giảm 15% (hợp lệ).  \n**Phí ship Hải Phòng:** 1.35 kg (3 × 0.45 kg) = 29,750 VND.\n\n**Tính toán:**\n- Tạm tính: 3 × 18,000,000 = 54,000,000 VND\n- Giảm 15%: 54,000,000 × 85% = 45,900,000 VND\n- Cộng ship: 45,900,000 + 29,750 = 45,929,750 VND\n\n**Tong cong: 45,929,750 VND** (lien he: [REDACTED])\nTong cong: 45929750 VND",
+      "status": "ok",
+      "session": "pub-102",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:20.655349Z"
+    },
+    {
+      "qid": "pub-103",
+      "question": "Mua 5 MacBook dung ma SALE15, ship Vung Tau tinh tong tien giup minh.",
+      "answer": "MacBook hiện chỉ có 4 cái trong kho, nhưng bạn yêu cầu mua 5 cái. Số lượng yêu cầu vượt quá tồn kho nên không thể đặt hàng.",
+      "status": "ok",
+      "session": "pub-103",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:20.711099Z"
+    },
+    {
+      "qid": "pub-104",
+      "question": "Mua 2 AirPods giao TP HCM, tong thanh toan bao nhieu?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt được.",
+      "status": "ok",
+      "session": "pub-104",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.132623Z"
+    },
+    {
+      "qid": "pub-105",
+      "question": "Mua 3 AirPods ap dung ma EXPIRED - tong cong bao nhieu VND?",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt được. (không có tổng)",
+      "status": "ok",
+      "session": "pub-105",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.138154Z"
+    },
+    {
+      "qid": "pub-106",
+      "question": "Mua 4 AirPods dung ma WINNER giao Hai Phong tinh tong tien giup minh.",
+      "answer": "AirPods hiện đang hết hàng nên không thể đặt được. Xin lỗi bạn!",
+      "status": "ok",
+      "session": "pub-106",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.218388Z"
+    },
+    {
+      "qid": "pub-107",
+      "question": "Mua 1 MacBook dung ma VIP20 giao Ha Noi tinh tong tien giup minh.",
+      "answer": "Tuyệt vời! Đã có đầy đủ thông tin, tôi tính toán như sau:\n\n**Thông tin đơn hàng:**\n- MacBook: 1 × 35.000.000 VND = **35.000.000 VND**\n- Mã VIP20: Giảm **20%**\n- Phí ship đến Hà Nội (1.6kg): **33.000 VND**\n\n**Tính toán:**\n- Giá sau giảm: 35.000.000 × (100% - 20%) = 35.000.000 × 80% = **28.000.000 VND**\n- Tổng cộng: 28.000.000 + 33.000 = **28.033.000 VND**\nTong cong: 28033000 VND",
+      "status": "ok",
+      "session": "pub-107",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.318819Z"
+    },
+    {
+      "qid": "pub-108",
+      "question": "Mua 4 MacBook ap dung ma SALE15 giao đà lạt tinh tong tien giup minh. lien he email an.nguyen@gmail.com",
+      "answer": "Đà Lạt hiện không nằm trong khu vực giao hàng của chúng tôi, vì vậy không thể thực hiện đơn hàng này. (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-108",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.358018Z"
+    },
+    {
+      "qid": "pub-109",
+      "question": "Mua 3 iPad, ship Hai Phong - tong cong bao nhieu VND?",
+      "answer": "iPad có sẵn hàng (7 cái), đơn giá 18,000,000 VND/cái.\n\n- Subtotal: 3 × 18,000,000 = 54,000,000 VND\n- Mã giảm giá: không có → 0%\n- Phí ship đến Hải Phòng (1.35 kg): 29,750 VND\n- Tổng: 54,000,000 + 29,750 = 54,029,750 VND\nTong cong: 54029750 VND",
+      "status": "ok",
+      "session": "pub-109",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.585865Z"
+    },
+    {
+      "qid": "pub-110",
+      "question": "Mua 4 xiaomi, ship TP HCM - tong cong bao nhieu VND? lien he email minh.tran@yahoo.com",
+      "answer": "Sản phẩm \"xiaomi\" không có trong hệ thống. Không thể đặt hàng.\n\n(Tong cong: khong co) (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-110",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.731937Z"
+    },
+    {
+      "qid": "pub-111",
+      "question": "Mua 4 iPad ap dung ma VIP20 giao Da Nang, tong thanh toan bao nhieu?",
+      "answer": "Tính toán:\n\n- **Đơn giá iPad**: 18.000.000 VND/cái\n- **Số lượng**: 4 → **Tạm tính**: 72.000.000 VND\n- **Mã VIP20**: giảm 20% → **Giảm còn**: 72.000.000 × 80% = **57.600.000 VND**\n- **Phí ship Đà Nẵng** (1,8 kg): **39.000 VND**\n- **Tổng cộng**: 57.600.000 + 39.000 = **57.639.000 VND**\nTong cong: 57639000 VND",
+      "status": "ok",
+      "session": "pub-111",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.789191Z"
+    },
+    {
+      "qid": "pub-112",
+      "question": "Mua 3 iPad giao den hà nội - tong cong bao nhieu VND?",
+      "answer": "Từ dữ liệu kiểm tra:\n\n- **iPad**: còn hàng (7 cái), giá **18.000.000 VND/cái**, mỗi cái nặng **0.45 kg**\n- **3 iPad**: 3 × 18.000.000 = **54.000.000 VND** (tạm tính)\n- Không có mã giảm giá → giảm 0%\n- Trọng lượng: 3 × 0.45 = **1.35 kg**\n- Phí ship đến **Hà Nội**: **31.750 VND**\n\n**Tổng cộng:** 54.000.000 + 31.750 = **54.031.750 VND**\n\n**Tong cong: 54031750 VND**\nTong cong: 54031750 VND",
+      "status": "ok",
+      "session": "pub-112",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:21.895823Z"
+    },
+    {
+      "qid": "pub-113",
+      "question": "Mua 2 iPad voi coupon WINNER giao Ha Noi - tong cong bao nhieu VND?",
+      "answer": "**Kết quả:**\n- **iPad**: còn hàng (7 cái), giá 18.000.000 VND/cái, nặng 0.45 kg/cái\n- **Coupon WINNER**: hợp lệ, giảm 10%\n- **Phí ship Hà Nội** cho 2 iPad (0.9 kg): 30.000 VND\n\n**Tính toán:**\n- Tạm tính: 2 × 18.000.000 = 36.000.000 VND\n- Giảm 10%: 36.000.000 × 90% = 32.400.000 VND\n- Cộng ship: 32.400.000 + 30.000 = 32.430.000 VND\n\n**Tong cong: 32430000 VND**\nTong cong: 32430000 VND",
+      "status": "ok",
+      "session": "pub-113",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.131278Z"
+    },
+    {
+      "qid": "pub-114",
+      "question": "Mua 3 iPhone ap dung ma VIP20 giao den TP HCM - tong cong bao nhieu VND?",
+      "answer": "Từ thông tin kiểm tra:\n\n- **iPhone**: còn hàng, đơn giá **22,000,000 VND**/chiếc, trọng lượng 0.5 kg/chiếc\n- **Số lượng**: 3 → **tạm tính**: 3 × 22,000,000 = **66,000,000 VND**\n- **Mã VIP20**: hợp lệ, giảm **20%** → giảm giá: 66,000,000 × 20% = 13,200,000 VND → sau giảm: **52,800,000 VND**\n- **Phí ship đến TP HCM** (1.5 kg): **27,500 VND**\n\n**Tổng cộng:** 52,800,000 + 27,500 = **52,827,500 VND**\nTong cong: 52827500 VND",
+      "status": "ok",
+      "session": "pub-114",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.209876Z"
+    },
+    {
+      "qid": "pub-115",
+      "question": "Mua 3 iPad ap dung ma EXPIRED giao den Vung Tau, tong thanh toan bao nhieu? lien he email minh.tran@yahoo.com",
+      "answer": "Vung Tau hiện không nằm trong danh sách địa điểm giao hàng của chúng tôi, vì vậy không thể đặt hàng được. (không có tổng) (lien he: [REDACTED])",
+      "status": "ok",
+      "session": "pub-115",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.223897Z"
+    },
+    {
+      "qid": "pub-116",
+      "question": "Mua 4 oppo giao TP HCM tinh tong tien giup minh.",
+      "answer": "Sản phẩm \"oppo\" không có trong kho, không thể đặt hàng. (không có tổng)",
+      "status": "ok",
+      "session": "pub-116",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.347321Z"
+    },
+    {
+      "qid": "pub-117",
+      "question": "Mua 4 MacBook dung ma WINNER, ship Hai Phong - tong cong bao nhieu VND?",
+      "answer": "Tính toán chi tiết:\n\n- **Số lượng**: 4 × MacBook\n- **Đơn giá**: 35.000.000 VND/cái\n- **Thành tiền**: 4 × 35.000.000 = **140.000.000 VND**\n- **Mã WINNER**: giảm 10% hợp lệ → **126.000.000 VND**\n- **Phí ship Hải Phòng** (6.4 kg): **55.000 VND**\n\n\n**Tong cong: 126055000 VND**\nTong cong: 126055000 VND",
+      "status": "ok",
+      "session": "pub-117",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.390720Z"
+    },
+    {
+      "qid": "pub-118",
+      "question": "Shop con iPad khong va gia bao nhieu VND?",
+      "answer": "Shop con iPad nhe! iPad hien dang co san (con 7 chiec). Gia moi chiec la **18.000.000 VND**.",
+      "status": "ok",
+      "session": "pub-118",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.584929Z"
+    },
+    {
+      "qid": "pub-119",
+      "question": "Mua 4 iPhone ap dung ma VIP20 giao den hải phòng tinh tong tien giup minh.",
+      "answer": "Tất cả thông tin đã đầy đủ. Tính tổng tiền:\n\n**Chi tiết đơn hàng:**\n- **Sản phẩm:** iPhone × 4\n- **Đơn giá:** 22,000,000 VND/chiếc\n- **Tạm tính:** 4 × 22,000,000 = **88,000,000 VND**\n- **Mã VIP20:** Giảm 20% → **70,400,000 VND**\n- **Phí ship Hải Phòng (2kg):** 33,000 VND\n- **Tổng cộng:** 70,400,000 + 33,000 = **70,433,000 VND**\nTong cong: 70433000 VND",
+      "status": "ok",
+      "session": "pub-119",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.630030Z"
+    },
+    {
+      "qid": "pub-120",
+      "question": "Mua 3 MacBook dung ma WINNER, ship hải phòng tinh tong tien giup minh.",
+      "answer": "Đã có đầy đủ thông tin, tôi tính tổng tiền cho bạn:\n\n**Chi tiết đơn hàng:**\n- MacBook × 3: 35.000.000₫ × 3 = **105.000.000₫**\n- Mã giảm giá **WINNER** (10%) → giảm còn: **94.500.000₫**\n- Phí ship Hải Phòng (4.8 kg): **47.000₫**\n\n**Tổng cộng:** 94.500.000 + 47.000 = **94.547.000₫**\nTong cong: 94547000 VND",
+      "status": "ok",
+      "session": "pub-120",
+      "turn": 0,
+      "ts": "2026-06-13T00:00:22.659041Z"
+    }
+  ],
+  "sealed": {
+    "alg": "HMAC-SHA256",
+    "note": "binary-measured metrics for scoring; build your own observability in wrapper.py",
+    "data": "W3siZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDY4NDQsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMzQxLCAicHJvbXB0X3Rva2VucyI6IDE1OTQ4LCAidG90YWxfdG9rZW5zIjogMTYyODl9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNTE0MSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiA0MTQsICJwcm9tcHRfdG9rZW5zIjogMTYwMjAsICJ0b3RhbF90b2tlbnMiOiAxNjQzNH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5NDc3LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEyODcsICJwcm9tcHRfdG9rZW5zIjogMjY1MjQsICJ0b3RhbF90b2tlbnMiOiAyNzgxMX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMDQyMiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEwMzMsICJwcm9tcHRfdG9rZW5zIjogMjYyNzIsICJ0b3RhbF90b2tlbnMiOiAyNzMwNX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA4NzYzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTE1NCwgInByb21wdF90b2tlbnMiOiAyNjE3NiwgInRvdGFsX3Rva2VucyI6IDI3MzMwfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDExMDI0LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE3MjcsICJwcm9tcHRfdG9rZW5zIjogMjg1MDAsICJ0b3RhbF90b2tlbnMiOiAzMDIyN319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA4NTYzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTA1OSwgInByb21wdF90b2tlbnMiOiAyNjI5MiwgInRvdGFsX3Rva2VucyI6IDI3MzUxfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEyODE0LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAzLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE1MDEsICJwcm9tcHRfdG9rZW5zIjogMzg1MjgsICJ0b3RhbF90b2tlbnMiOiA0MDAyOX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMDIxMiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDExMjgsICJwcm9tcHRfdG9rZW5zIjogMjYzMDgsICJ0b3RhbF90b2tlbnMiOiAyNzQzNn19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5NDY0LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQyMCwgInByb21wdF90b2tlbnMiOiAyODEzMiwgInRvdGFsX3Rva2VucyI6IDI5NTUyfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwNDMzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDkzOCwgInByb21wdF90b2tlbnMiOiAyNzU4NCwgInRvdGFsX3Rva2VucyI6IDI4NTIyfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDkyNjUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTMzNiwgInByb21wdF90b2tlbnMiOiAyNzUyMCwgInRvdGFsX3Rva2VucyI6IDI4ODU2fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwMDUxLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTA0MywgInByb21wdF90b2tlbnMiOiAyNjI0MCwgInRvdGFsX3Rva2VucyI6IDI3MjgzfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDgxODUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDExNTksICJwcm9tcHRfdG9rZW5zIjogMjY0MTIsICJ0b3RhbF90b2tlbnMiOiAyNzU3MX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA1NjY5LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNTMzLCAicHJvbXB0X3Rva2VucyI6IDE1ODYwLCAidG90YWxfdG9rZW5zIjogMTYzOTN9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogODE1MiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTA2NCwgInByb21wdF90b2tlbnMiOiAyNjY2NCwgInRvdGFsX3Rva2VucyI6IDI3NzI4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDkzNjgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTUxMiwgInByb21wdF90b2tlbnMiOiAyODIwOCwgInRvdGFsX3Rva2VucyI6IDI5NzIwfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDgxMDEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogODk4LCAicHJvbXB0X3Rva2VucyI6IDMyMzQ0LCAidG90YWxfdG9rZW5zIjogMzMyNDJ9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNDgwNiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNDQxLCAicHJvbXB0X3Rva2VucyI6IDE2MzY0LCAidG90YWxfdG9rZW5zIjogMTY4MDV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTA1NDQsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDMsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTU0NCwgInByb21wdF90b2tlbnMiOiAzNzA5MiwgInRvdGFsX3Rva2VucyI6IDM4NjM2fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwNTU4LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzMjEsICJwcm9tcHRfdG9rZW5zIjogMjcxODQsICJ0b3RhbF90b2tlbnMiOiAyODUwNX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0MDgzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50Il0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzNjgsICJwcm9tcHRfdG9rZW5zIjogMTYyMjAsICJ0b3RhbF90b2tlbnMiOiAxNjU4OH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA4MzczLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzMzIsICJwcm9tcHRfdG9rZW5zIjogMjczNDQsICJ0b3RhbF90b2tlbnMiOiAyODY3Nn19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMTkwMCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzNjAsICJwcm9tcHRfdG9rZW5zIjogMzI3ODAsICJ0b3RhbF90b2tlbnMiOiAzNDE0MH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA3MDAwLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNTQzLCAicHJvbXB0X3Rva2VucyI6IDE1OTY4LCAidG90YWxfdG9rZW5zIjogMTY1MTF9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTAyNzIsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTIzNywgInByb21wdF90b2tlbnMiOiAyNjQwNCwgInRvdGFsX3Rva2VucyI6IDI3NjQxfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDY0NzAsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNDM1LCAicHJvbXB0X3Rva2VucyI6IDE1NTA4LCAidG90YWxfdG9rZW5zIjogMTU5NDN9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTAwMTEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTM4MywgInByb21wdF90b2tlbnMiOiAzMTk5MiwgInRvdGFsX3Rva2VucyI6IDMzMzc1fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDUwMDUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiA1MzUsICJwcm9tcHRfdG9rZW5zIjogMTYyMjgsICJ0b3RhbF90b2tlbnMiOiAxNjc2M319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0Njg5LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDM3NCwgInByb21wdF90b2tlbnMiOiAxNTUyMCwgInRvdGFsX3Rva2VucyI6IDE1ODk0fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDkyMDEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxNDU5LCAicHJvbXB0X3Rva2VucyI6IDI3Mjk2LCAidG90YWxfdG9rZW5zIjogMjg3NTV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNjQ3MCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiA0MzUsICJwcm9tcHRfdG9rZW5zIjogMTU1MDgsICJ0b3RhbF90b2tlbnMiOiAxNTk0M319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA4NjIxLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzMjEsICJwcm9tcHRfdG9rZW5zIjogMjY3NjgsICJ0b3RhbF90b2tlbnMiOiAyODA4OX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5NDQ1LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTExMCwgInByb21wdF90b2tlbnMiOiAyNTU1MiwgInRvdGFsX3Rva2VucyI6IDI2NjYyfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwNzU1LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzMTUsICJwcm9tcHRfdG9rZW5zIjogMjY5OTIsICJ0b3RhbF90b2tlbnMiOiAyODMwN319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5ODg5LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAzLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEyNzUsICJwcm9tcHRfdG9rZW5zIjogMzE1ODAsICJ0b3RhbF90b2tlbnMiOiAzMjg1NX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5Njg0LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE1NDMsICJwcm9tcHRfdG9rZW5zIjogMjc1NjQsICJ0b3RhbF90b2tlbnMiOiAyOTEwN319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMTExNywgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE1MDQsICJwcm9tcHRfdG9rZW5zIjogMjgyNDAsICJ0b3RhbF90b2tlbnMiOiAyOTc0NH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA4NTIyLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE0MDgsICJwcm9tcHRfdG9rZW5zIjogMjc1NzIsICJ0b3RhbF90b2tlbnMiOiAyODk4MH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0NDg2LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDQ0MSwgInByb21wdF90b2tlbnMiOiAxNTkzNiwgInRvdGFsX3Rva2VucyI6IDE2Mzc3fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQzNDEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMzg4LCAicHJvbXB0X3Rva2VucyI6IDE1OTkyLCAidG90YWxfdG9rZW5zIjogMTYzODB9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogODY2NCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzEwLCAicHJvbXB0X3Rva2VucyI6IDI2Mzk2LCAidG90YWxfdG9rZW5zIjogMjc3MDZ9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogOTEyMSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxNTM1LCAicHJvbXB0X3Rva2VucyI6IDI4NDYwLCAidG90YWxfdG9rZW5zIjogMjk5OTV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNDY4OSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzNzQsICJwcm9tcHRfdG9rZW5zIjogMTU1MjAsICJ0b3RhbF90b2tlbnMiOiAxNTg5NH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA3ODQwLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDk4MywgInByb21wdF90b2tlbnMiOiAyNzExMiwgInRvdGFsX3Rva2VucyI6IDI4MDk1fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDExMjk1LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE0MzAsICJwcm9tcHRfdG9rZW5zIjogMjc0NDgsICJ0b3RhbF90b2tlbnMiOiAyODg3OH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA3NTM4LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNzc5LCAicHJvbXB0X3Rva2VucyI6IDI2MjY4LCAidG90YWxfdG9rZW5zIjogMjcwNDd9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNjMyNCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDM4NiwgInByb21wdF90b2tlbnMiOiAxNjAwMCwgInRvdGFsX3Rva2VucyI6IDE2Mzg2fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDY3NTksICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNTMwLCAicHJvbXB0X3Rva2VucyI6IDE1ODIwLCAidG90YWxfdG9rZW5zIjogMTYzNTB9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogOTIyMiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDkxNywgInByb21wdF90b2tlbnMiOiAyNTg2MCwgInRvdGFsX3Rva2VucyI6IDI2Nzc3fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDg2NDYsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTM2OCwgInByb21wdF90b2tlbnMiOiAyNzA0OCwgInRvdGFsX3Rva2VucyI6IDI4NDE2fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQ1NjIsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzNTMsICJwcm9tcHRfdG9rZW5zIjogMTU5NTYsICJ0b3RhbF90b2tlbnMiOiAxNjMwOX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMDk0NiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzc2LCAicHJvbXB0X3Rva2VucyI6IDI2OTg4LCAidG90YWxfdG9rZW5zIjogMjgzNjR9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTExMTUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTY1OSwgInByb21wdF90b2tlbnMiOiAyNjgyOCwgInRvdGFsX3Rva2VucyI6IDI4NDg3fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQxNDMsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMzIxLCAicHJvbXB0X3Rva2VucyI6IDE1NTA4LCAidG90YWxfdG9rZW5zIjogMTU4Mjl9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNDIzMSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzMzMsICJwcm9tcHRfdG9rZW5zIjogMTU2MTYsICJ0b3RhbF90b2tlbnMiOiAxNTk0OX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA3MzY1LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogODEzLCAicHJvbXB0X3Rva2VucyI6IDI2MjMyLCAidG90YWxfdG9rZW5zIjogMjcwNDV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTEwMTgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQzNCwgInByb21wdF90b2tlbnMiOiAyNzYwNCwgInRvdGFsX3Rva2VucyI6IDI5MDM4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDg1NDgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTMyOCwgInByb21wdF90b2tlbnMiOiAyNjMzMiwgInRvdGFsX3Rva2VucyI6IDI3NjYwfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDk0NjksICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQ2NCwgInByb21wdF90b2tlbnMiOiAyNzY4NCwgInRvdGFsX3Rva2VucyI6IDI5MTQ4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwMTE1LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAzLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzNzksICJwcm9tcHRfdG9rZW5zIjogMzY1NDQsICJ0b3RhbF90b2tlbnMiOiAzNzkyM319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5NTEwLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE1MjIsICJwcm9tcHRfdG9rZW5zIjogMjcyMjQsICJ0b3RhbF90b2tlbnMiOiAyODc0Nn19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5MjMzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQxMiwgInByb21wdF90b2tlbnMiOiAyNzgzNiwgInRvdGFsX3Rva2VucyI6IDI5MjQ4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDU2NzUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNzA0LCAicHJvbXB0X3Rva2VucyI6IDE2NjIwLCAidG90YWxfdG9rZW5zIjogMTczMjR9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNTUyMywgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDUyMywgInByb21wdF90b2tlbnMiOiAxNTkyNCwgInRvdGFsX3Rva2VucyI6IDE2NDQ3fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEyMTE4LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAzLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzNDksICJwcm9tcHRfdG9rZW5zIjogMzY0ODgsICJ0b3RhbF90b2tlbnMiOiAzNzgzN319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5NDYwLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiA5NjMsICJwcm9tcHRfdG9rZW5zIjogMjYzOTYsICJ0b3RhbF90b2tlbnMiOiAyNzM1OX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0OTgxLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDU2OSwgInByb21wdF90b2tlbnMiOiAxNjAyNCwgInRvdGFsX3Rva2VucyI6IDE2NTkzfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwOTQ3LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQ2NiwgInByb21wdF90b2tlbnMiOiAyNzc2NCwgInRvdGFsX3Rva2VucyI6IDI5MjMwfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDY0NzAsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNDM1LCAicHJvbXB0X3Rva2VucyI6IDE1NTA4LCAidG90YWxfdG9rZW5zIjogMTU5NDN9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTAzMTUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxNTcwLCAicHJvbXB0X3Rva2VucyI6IDI4NTg4LCAidG90YWxfdG9rZW5zIjogMzAxNTh9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogODc0OCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzNjcsICJwcm9tcHRfdG9rZW5zIjogMjc0NDAsICJ0b3RhbF90b2tlbnMiOiAyODgwN319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA4MjA3LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzMDUsICJwcm9tcHRfdG9rZW5zIjogMjY4MDgsICJ0b3RhbF90b2tlbnMiOiAyODExM319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5NDM0LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAzLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEyMzMsICJwcm9tcHRfdG9rZW5zIjogMzIxMzIsICJ0b3RhbF90b2tlbnMiOiAzMzM2NX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMDMzMywgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMjUxLCAicHJvbXB0X3Rva2VucyI6IDI2MzQ0LCAidG90YWxfdG9rZW5zIjogMjc1OTV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMzg1MywgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzMTIsICJwcm9tcHRfdG9rZW5zIjogMTU5NDgsICJ0b3RhbF90b2tlbnMiOiAxNjI2MH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMTYyNCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzM1LCAicHJvbXB0X3Rva2VucyI6IDMxNDA0LCAidG90YWxfdG9rZW5zIjogMzI3Mzl9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTA2MzEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTM2MiwgInByb21wdF90b2tlbnMiOiAyNzI3NiwgInRvdGFsX3Rva2VucyI6IDI4NjM4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDg5NTksICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQxMywgInByb21wdF90b2tlbnMiOiAyNzAxNiwgInRvdGFsX3Rva2VucyI6IDI4NDI5fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDg1ODIsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQyMiwgInByb21wdF90b2tlbnMiOiAyNjc3NiwgInRvdGFsX3Rva2VucyI6IDI4MTk4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDg1MDYsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTMwMywgInByb21wdF90b2tlbnMiOiAyNjM4OCwgInRvdGFsX3Rva2VucyI6IDI3NjkxfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQ1MzEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDQyOCwgInByb21wdF90b2tlbnMiOiAxNTk2NCwgInRvdGFsX3Rva2VucyI6IDE2MzkyfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwNDE5LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE2MDIsICJwcm9tcHRfdG9rZW5zIjogMjg0MjgsICJ0b3RhbF90b2tlbnMiOiAzMDAzMH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0NTE5LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDQwMSwgInByb21wdF90b2tlbnMiOiAxNTk4OCwgInRvdGFsX3Rva2VucyI6IDE2Mzg5fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDk4MzcsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTM1OSwgInByb21wdF90b2tlbnMiOiAzMjA5NiwgInRvdGFsX3Rva2VucyI6IDMzNDU1fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDgwNjQsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMDg3LCAicHJvbXB0X3Rva2VucyI6IDI2MzcyLCAidG90YWxfdG9rZW5zIjogMjc0NTl9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNDE0MCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzNTQsICJwcm9tcHRfdG9rZW5zIjogMTU3NTIsICJ0b3RhbF90b2tlbnMiOiAxNjEwNn19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5MDM3LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDE1MDEsICJwcm9tcHRfdG9rZW5zIjogMjc1OTIsICJ0b3RhbF90b2tlbnMiOiAyOTA5M319LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAzNzg2LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDI5NywgInByb21wdF90b2tlbnMiOiAxNTQ4OCwgInRvdGFsX3Rva2VucyI6IDE1Nzg1fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDY4MjEsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogODI5LCAicHJvbXB0X3Rva2VucyI6IDI2ODI4LCAidG90YWxfdG9rZW5zIjogMjc2NTd9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogODMyOSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDQ2NSwgInByb21wdF90b2tlbnMiOiAxNTgyMCwgInRvdGFsX3Rva2VucyI6IDE2Mjg1fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDk2MTQsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMTMyLCAicHJvbXB0X3Rva2VucyI6IDI2MDg4LCAidG90YWxfdG9rZW5zIjogMjcyMjB9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTI3NDcsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTM4NiwgInByb21wdF90b2tlbnMiOiAzMjUzMiwgInRvdGFsX3Rva2VucyI6IDMzOTE4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDk1NjgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQxMywgInByb21wdF90b2tlbnMiOiAzMjE2OCwgInRvdGFsX3Rva2VucyI6IDMzNTgxfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDcwOTQsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNTg0LCAicHJvbXB0X3Rva2VucyI6IDE1OTYwLCAidG90YWxfdG9rZW5zIjogMTY1NDR9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTA5NDgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTMxMSwgInByb21wdF90b2tlbnMiOiAyNzMyOCwgInRvdGFsX3Rva2VucyI6IDI4NjM5fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDc0NzMsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogODI3LCAicHJvbXB0X3Rva2VucyI6IDMxNTgwLCAidG90YWxfdG9rZW5zIjogMzI0MDd9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTAyNzAsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQyNCwgInByb21wdF90b2tlbnMiOiAyNjQ1NiwgInRvdGFsX3Rva2VucyI6IDI3ODgwfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEwNzUzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzNDksICJwcm9tcHRfdG9rZW5zIjogMjcyMTYsICJ0b3RhbF90b2tlbnMiOiAyODU2NX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA1NDIzLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNTYzLCAicHJvbXB0X3Rva2VucyI6IDE2MzUyLCAidG90YWxfdG9rZW5zIjogMTY5MTV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTMwMzMsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTM2OSwgInByb21wdF90b2tlbnMiOiAzMTc2OCwgInRvdGFsX3Rva2VucyI6IDMzMTM3fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDEyODAwLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogdHJ1ZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQ3MCwgInByb21wdF90b2tlbnMiOiAyNzM0OCwgInRvdGFsX3Rva2VucyI6IDI4ODE4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQ4OTMsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogNTI2LCAicHJvbXB0X3Rva2VucyI6IDE1ODk2LCAidG90YWxfdG9rZW5zIjogMTY0MjJ9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNDA5MCwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzNDYsICJwcm9tcHRfdG9rZW5zIjogMTU4NDgsICJ0b3RhbF90b2tlbnMiOiAxNjE5NH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0ODI0LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50Il0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiA0ODAsICJwcm9tcHRfdG9rZW5zIjogMTYzMDAsICJ0b3RhbF90b2tlbnMiOiAxNjc4MH19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA0NjE3LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAxLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDUzMiwgInByb21wdF90b2tlbnMiOiAxNjQyMCwgInRvdGFsX3Rva2VucyI6IDE2OTUyfX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDg4MzgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTQzNCwgInByb21wdF90b2tlbnMiOiAyNzA2NCwgInRvdGFsX3Rva2VucyI6IDI4NDk4fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDc3MjYsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiA5NjQsICJwcm9tcHRfdG9rZW5zIjogMjczMzIsICJ0b3RhbF90b2tlbnMiOiAyODI5Nn19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA3MjUyLCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTAxNSwgInByb21wdF90b2tlbnMiOiAyNTUwNCwgInRvdGFsX3Rva2VucyI6IDI2NTE5fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDYxMTYsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiB0cnVlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMSwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAzNTksICJwcm9tcHRfdG9rZW5zIjogMTU4OTYsICJ0b3RhbF90b2tlbnMiOiAxNjI1NX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiA5MTM3LCAibW9kZWwiOiAiZGVlcHNlZWstdjQtZmxhc2giLCAicGlpIjogZmFsc2UsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAyLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEzMjAsICJwcm9tcHRfdG9rZW5zIjogMjY3NzIsICJ0b3RhbF90b2tlbnMiOiAyODA5Mn19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMDQ4NiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDEyNDUsICJwcm9tcHRfdG9rZW5zIjogMjY3ODQsICJ0b3RhbF90b2tlbnMiOiAyODAyOX19LCB7ImVycm9yIjogbnVsbCwgImxhdGVuY3lfbXMiOiAxMDM5NiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzQwLCAicHJvbXB0X3Rva2VucyI6IDI2OTkyLCAidG90YWxfdG9rZW5zIjogMjgzMzJ9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogODg1MSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzEzLCAicHJvbXB0X3Rva2VucyI6IDI2ODMyLCAidG90YWxfdG9rZW5zIjogMjgxNDV9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogNzk2OSwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IHRydWUsICJwcm92aWRlciI6ICJvcGVuYWkiLCAic3RlcHMiOiAzLCAidG9vbHNfdXNlZCI6IFsiY2hlY2tfc3RvY2siLCAiZ2V0X2Rpc2NvdW50IiwgImNhbGNfc2hpcHBpbmciXSwgInVzYWdlIjogeyJjb21wbGV0aW9uX3Rva2VucyI6IDg3NiwgInByb21wdF90b2tlbnMiOiAzMjk2MCwgInRvdGFsX3Rva2VucyI6IDMzODM2fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQyNzgsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMzY2LCAicHJvbXB0X3Rva2VucyI6IDE1NzMyLCAidG90YWxfdG9rZW5zIjogMTYwOTh9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogMTQ3OTUsICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDIsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayIsICJnZXRfZGlzY291bnQiLCAiY2FsY19zaGlwcGluZyJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMTc2NywgInByb21wdF90b2tlbnMiOiAyOTE4OCwgInRvdGFsX3Rva2VucyI6IDMwOTU1fX0sIHsiZXJyb3IiOiBudWxsLCAibGF0ZW5jeV9tcyI6IDQ2ODksICJtb2RlbCI6ICJkZWVwc2Vlay12NC1mbGFzaCIsICJwaWkiOiBmYWxzZSwgInByb3ZpZGVyIjogIm9wZW5haSIsICJzdGVwcyI6IDEsICJ0b29sc191c2VkIjogWyJjaGVja19zdG9jayJdLCAidXNhZ2UiOiB7ImNvbXBsZXRpb25fdG9rZW5zIjogMzc0LCAicHJvbXB0X3Rva2VucyI6IDE1NTIwLCAidG90YWxfdG9rZW5zIjogMTU4OTR9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogOTY1NywgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMywgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzM4LCAicHJvbXB0X3Rva2VucyI6IDMxNzk2LCAidG90YWxfdG9rZW5zIjogMzMxMzR9fSwgeyJlcnJvciI6IG51bGwsICJsYXRlbmN5X21zIjogOTI5MiwgIm1vZGVsIjogImRlZXBzZWVrLXY0LWZsYXNoIiwgInBpaSI6IGZhbHNlLCAicHJvdmlkZXIiOiAib3BlbmFpIiwgInN0ZXBzIjogMiwgInRvb2xzX3VzZWQiOiBbImNoZWNrX3N0b2NrIiwgImdldF9kaXNjb3VudCIsICJjYWxjX3NoaXBwaW5nIl0sICJ1c2FnZSI6IHsiY29tcGxldGlvbl90b2tlbnMiOiAxMzIwLCAicHJvbXB0X3Rva2VucyI6IDI2OTg0LCAidG90YWxfdG9rZW5zIjogMjgzMDR9fV0=",
+    "sig": "4e78f14ab27dd09c16d79bcd7f04abbf74b2812e0812ad5832b8903c595a58c4"
+  }
+}

@@ -54,7 +54,7 @@
       "fault_class": "cost_blowup",
       "evidence": {"metric": "cost_usd_per_request", "observed": "tokens/cost far above task need", "trace_ids": []},
       "root_cause": "verbose_system=true, context_size=8, max_completion_tokens=2000, model_price_tier=premium",
-      "suggested_fix": "verbose_system=false, context_size=4, max_completion_tokens=512, model_price_tier=economy"
+      "suggested_fix": "verbose_system=false, context_size=4, max_completion_tokens=512, model_price_tier=mini (the actual cheap tier; 'premium'/invalid tiers score worst on cost)"
     },
     {
       "fault_class": "quality_drift",

@@ -1,0 +1,21 @@
+{
+  "team": "2A202600787-NguyenBachHaiDang",
+  "phase": "public",
+  "headline": 100.0,
+  "sub": {
+    "correct": 0.8967,
+    "quality": 0.9328,
+    "error": 1.0,
+    "latency": 0.3565,
+    "cost": 0.8798,
+    "drift": 0.817,
+    "prompt": 0.9322
+  },
+  "diag_f1": 0.952,
+  "n": 120,
+  "n_correct": 98,
+  "judge_mode": "offline",
+  "weights_hash": "e81a8ed58d93",
+  "key_hash": "9a800fa6968d",
+  "sig": "84f6ab320b6ef83d91ed7e7a833b2988373383bfc37387a64c226054d994b058"
+}
