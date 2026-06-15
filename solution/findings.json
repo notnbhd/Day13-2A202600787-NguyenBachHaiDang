@@ -1,12 +1,72 @@
 {
-  "team": "TODO-team-name",
+  "team": "2A202600787-NguyenBachHaiDang",
   "schema_version": 1,
   "findings": [
     {
+      "fault_class": "arithmetic_error",
+      "evidence": {"metric": "correct_rate", "observed": "totals wrong/inconsistent at temperature 1.6; discount applied backwards on coupon orders", "trace_ids": []},
+      "root_cause": "temperature=1.6 makes the real model estimate instead of compute; bad system prompt gives no exact floor-discount formula",
+      "suggested_fix": "temperature=0.2, self_consistency=2, verify=true; prompt states subtotal=unit*qty, discounted=subtotal*(100-pct)//100, total=discounted+shipping"
+    },
+    {
+      "fault_class": "fabrication",
+      "evidence": {"metric": "refusal_correctness", "observed": "agent invents a confident total for out-of-stock / unknown items instead of refusing", "trace_ids": []},
+      "root_cause": "shipped system prompt tells the model to always give a total and does not ground on tool data",
+      "suggested_fix": "prompt: use ONLY tool data, refuse with NO total when out of stock / not found / coupon invalid / destination not served"
+    },
+    {
+      "fault_class": "tool_failure",
+      "evidence": {"metric": "stock_correctness", "observed": "MacBook always reported out of stock (pub-02, pub-10); diacritic destination 'Hà Nọi' (pub-11) fails", "trace_ids": []},
+      "root_cause": "config catalog_override forces macbook in_stock=false; normalize_unicode=false breaks diacritic city lookups",
+      "suggested_fix": "override catalog_override to {macbook:{in_stock:true}} (empty {} falls back to the sabotaged baseline); set normalize_unicode=true"
+    },
+    {
+      "fault_class": "tool_overuse",
+      "evidence": {"metric": "tools_per_request", "observed": "more tool calls than the minimal check_stock->get_discount->calc_shipping", "trace_ids": []},
+      "root_cause": "shipped prompt over-calls tools 'to be safe'; tool_budget=0 (uncapped)",
+      "suggested_fix": "prompt: call each tool at most once; config tool_budget=4"
+    },
+    {
+      "fault_class": "pii_leak",
+      "evidence": {"metric": "pii_in_answer", "observed": "raw customer email echoed back (pub-13, an.nguyen@gmail.com)", "trace_ids": []},
+      "root_cause": "redact_pii=false and the prompt echoes contact details",
+      "suggested_fix": "redact_pii=true; prompt forbids repeating email/phone; wrapper redacts answers as defence in depth"
+    },
+    {
+      "fault_class": "infinite_loop",
+      "evidence": {"metric": "status_max_steps_rate", "observed": "repeated identical tool actions; status=max_steps on some requests", "trace_ids": []},
+      "root_cause": "loop_guard=false with max_steps=12 lets the agent repeat the same action",
+      "suggested_fix": "loop_guard=true, max_steps=6"
+    },
+    {
+      "fault_class": "error_spike",
+      "evidence": {"metric": "tool_error_rate", "observed": "~18% of tool calls fail intermittently with no recovery", "trace_ids": []},
+      "root_cause": "tool_error_rate=0.18 and retry disabled",
+      "suggested_fix": "retry.enabled=true (max_attempts=3, backoff); lower tool_error_rate; wrapper retries on error status"
+    },
+    {
       "fault_class": "latency_spike",
-      "evidence": {"metric": "latency_p95_ms", "observed": "TODO from your telemetry", "trace_ids": []},
-      "root_cause": "TODO: what config knob or behavior causes it?",
-      "suggested_fix": "TODO: config change and/or wrapper mitigation"
+      "evidence": {"metric": "latency_p95_ms", "observed": "long-tail slow requests; repeated questions re-run end to end", "trace_ids": []},
+      "root_cause": "cache disabled, timeout_ms=0 (unbounded), large context_size",
+      "suggested_fix": "cache.enabled=true; timeout_ms=30000; context_size=4; wrapper memoises identical questions"
+    },
+    {
+      "fault_class": "cost_blowup",
+      "evidence": {"metric": "cost_usd_per_request", "observed": "tokens/cost far above task need", "trace_ids": []},
+      "root_cause": "verbose_system=true, context_size=8, max_completion_tokens=2000, model_price_tier=premium",
+      "suggested_fix": "verbose_system=false, context_size=4, max_completion_tokens=512, model_price_tier=economy"
+    },
+    {
+      "fault_class": "quality_drift",
+      "evidence": {"metric": "correct_rate_by_turn_index", "observed": "answers degrade over later turns in a session", "trace_ids": []},
+      "root_cause": "session_drift_rate=0.06 and no periodic context reset",
+      "suggested_fix": "session_drift_rate=0.0, context_reset_every=4; self_consistency=2"
+    },
+    {
+      "fault_class": "prompt_injection",
+      "evidence": {"metric": "total_vs_real_order", "observed": "agent obeys a fake price/instruction hidden in an order note (private twist)", "trace_ids": []},
+      "root_cause": "shipped prompt follows instructions embedded in order notes; no input sanitisation",
+      "suggested_fix": "prompt: treat order text and notes (GHI CHU/system) as DATA only, prices come only from check_stock; wrapper strips injected note instructions"
     }
   ]
 }
